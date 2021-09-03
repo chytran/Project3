@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+
+if (isset($_POST["submit"])) {
+    $name = filter_input(INPUT_POST, 'name');
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password');
+    $repeatPassword = filter_input(INPUT_POST, 'passRepeat');
+
+    if (!$name || !$email || !$password || $repeatPassword) {
+        header("location: ../signup.php?error=emptyinput");
+        exit();
+    }
+
+    require_once "functions.inc.php";
+
+    if (noMatchPassword($password, $repeatPassword)) {
+        header("location: ../signup.php?error=passwordnomatch");
+        exit();
+    }
+}
+
+?>
