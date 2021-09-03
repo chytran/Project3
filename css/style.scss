@@ -16,3 +16,13 @@ ul {
 a {
     text-decoration: none;
 }
+
+/*======================= VARIABLE CSS ==============================*/
+:root {
+    --header-height: 3rem;
+
+    /*============== Colors =================*/
+    --main-color: #0071FF;
+    --main-white: #FFF;
+    --main-black: #121212;
+}
