@@ -1,6 +1,7 @@
 <?php
     include_once 'components/header.php';
 ?>
+
 <header class="header" id="header">
     <nav class="nav container">
         <a href="#" class="nav__logo">Portfolio</a>
