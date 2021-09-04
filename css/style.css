@@ -8,6 +8,7 @@
   --main-white: #FFF;
   --main-black: #121212;
   --body-color: hsl(var(--hue-color), 100%, 99%);
+  --ocean-blue: #30A1B6;
   /*============== Font and typography =================*/
   --body-font: 'Poppins', sans-serif;
   --title-font: 'Raleway', sans-serif;
@@ -275,7 +276,7 @@ input {
 }
 
 .right__side .signup__title {
-  color: #30A1B6;
+  color: var(--ocean-blue);
   font-size: 5rem;
   font-weight: var(--font-semi-bold);
   font-family: var(--body-font);
@@ -294,9 +295,10 @@ input {
 
 .right__side .button {
   color: var(--main-white);
-  border: 2px solid #FFF;
+  background-color: var(--ocean-blue);
+  border: 2px solid #30A1B6;
   border-radius: 500px;
-  width: 40%;
+  width: 30%;
   font-size: 1.4rem;
   text-align: center;
   padding: 1rem;
@@ -304,6 +306,7 @@ input {
   display: inline-block;
   -webkit-transition: var(--img-transition);
   transition: var(--img-transition);
+  cursor: pointer;
 }
 
 .right__side .button:hover {
