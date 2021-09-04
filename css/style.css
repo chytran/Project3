@@ -1,3 +1,5 @@
+/*======================= POPPINS =============================*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
 /*======================= VARIABLE CSS ==============================*/
 :root {
   --header-height: 3rem;
@@ -7,9 +9,10 @@
   --main-black: #121212;
   --body-color: hsl(var(--hue-color), 100%, 99%);
   /*============== Font and typography =================*/
-  --body-font: 'Open Sans', sans-serif;
+  --body-font: 'Poppins', sans-serif;
   --title-font: 'Raleway', sans-serif;
   --biggest-font-size: 2.5rem;
+  --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
@@ -223,8 +226,43 @@ input {
 .left__side .message__holder {
   position: relative;
   z-index: var(--z-fixed);
-  height: 100vh;
+  height: 90vh;
   width: 100%;
+  margin-top: -10rem;
+}
+
+.left__side .left__header {
+  color: var(--main-white);
+  font-size: 5rem;
+  font-weight: var(--font-semi-bold);
+  font-family: var(--body-font);
+}
+
+.left__side .left__text {
+  color: #F0F0F0;
+  opacity: 0.85;
+  font-size: 1.3rem;
+  width: 60%;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.left__side .button {
+  color: var(--main-white);
+  border: 2px solid #FFF;
+  border-radius: 500px;
+  width: 40%;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  display: inline-block;
+  -webkit-transition: var(--img-transition);
+  transition: var(--img-transition);
+}
+
+.left__side .button:hover {
+  opacity: 0.6;
 }
 
 .right__side {
@@ -234,6 +272,13 @@ input {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   z-index: var(--z-fixed);
+}
+
+.right__side .signup__title {
+  color: #30A1B6;
+  font-size: 5rem;
+  font-weight: var(--font-semi-bold);
+  font-family: var(--body-font);
 }
 
 /*======================== SEARCHRESULT.PHP ========================*/
