@@ -2,13 +2,16 @@
     include_once 'components/header.php';
 ?>
 <div class="main__container flex__column" id="main-container">
+    <img class="bg-main" src="image/search-background.jpg" alt="">
     <section class="hero flex__row signup__container" id="hero">
-        <div class="left__side">
-            <img class="bg" src="image/signup.jpg" alt="">
+        <div class="left__side flex-column">
             <div class="message__container flex__column">
-                <h1 class="left__header header__main">Welcome Back!</h1>
-                <p class="left__text">To keep connected with us please login with your info</p>
-                <a href="login.php" class="button">Sign in</a>
+                <img class="bg" src="image/signup.jpg" alt="">
+                <div class="message__holder flex__column">
+                    <h1 class="left__header header__main">Welcome Back!</h1>
+                    <p class="left__text">To keep connected with us please login with your info</p>
+                    <a href="login.php" class="button">Sign in</a>
+                </div>
             </div>
         </div>
 

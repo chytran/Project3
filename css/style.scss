@@ -176,6 +176,17 @@ input {
     }
 }
 
+.bg-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
 .left__side {
     width: 40%;
     height: 90vh;
@@ -198,9 +209,31 @@ input {
 
     .message__container {
         position: relative;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .message__holder {
+        position: relative;
         z-index: var(--z-fixed);
+        height: 100vh;
+        width: 100%;
+    }
+
+    .left__header {
+        
+    }
+
+    .left__text {
+
+    }
+
+    .button {
+
     }
 }
+
+
 
 .right__side {
     width: 60%;
@@ -208,6 +241,7 @@ input {
     background-color: #FFFFFF;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    z-index: var(--z-fixed);
 }
 
 @media screen and (max-width: 767px) {
