@@ -96,7 +96,6 @@ html {
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
 }
 
 h1, h2, h3 {
@@ -179,10 +178,16 @@ input {
   position: relative;
 }
 
+.main__container .signup__container {
+  -webkit-box-shadow: 0.5px 70px 35px #808080;
+          box-shadow: 0.5px 70px 35px #808080;
+}
+
 .left__side {
   width: 40%;
   height: 90vh;
-  background-color: black;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .left__side .bg {
@@ -194,6 +199,8 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   z-index: var(--z-tooltip);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .left__side .message__container {
@@ -205,6 +212,8 @@ input {
   width: 60%;
   height: 90vh;
   background-color: #FFFFFF;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 /*======================== SEARCHRESULT.PHP ========================*/
