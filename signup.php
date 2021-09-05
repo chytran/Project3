@@ -23,7 +23,14 @@
                 <div class="name__container input__design">
                     <div class="input__extra__container">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
-                        <input type="text" name="name" id="name" placeholder="Name" class="name__input input__info">
+                        <input type="text" name="name" id="name" placeholder="First Name" class="name__input input__info">
+                    </div>
+                </div>
+
+                <div class="name__container input__design">
+                    <div class="input__extra__container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
+                        <input type="text" name="lastName" id="name" placeholder="Last Name" class="name__input input__info">
                     </div>
                 </div>
 

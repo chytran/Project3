@@ -2,6 +2,7 @@
 
 if (isset($_POST["submit"])) {
     $name = filter_input(INPUT_POST, 'name');
+    $lastName = filter_input(INPUT_POST, 'lastName');
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
     $password = filter_input(INPUT_POST, 'password');
     $repeatPassword = filter_input(INPUT_POST, 'passRepeat');
@@ -20,7 +21,7 @@ if (isset($_POST["submit"])) {
     }
 
     // Error Catching
-    if (emptyInputSignup($name, $email, $password, $repeatPassword)) {
+    if (emptyInputSignup($name, $lastName, $email, $password, $repeatPassword)) {
         header("location: ../signup.php?error=emptyinput");
         exit();
     }
@@ -35,14 +36,19 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-    // if username exist
-    if (uidExists($conn, $name, $email) !== false) {
-        header("location: ../signup.php?error=usernametaken");
+    if (invalidName($lastName) !== false) {
+        header("location: ../signup.php?error=invalidName");
         exit();
     }
 
+    // if username exist
+    // if (uidExists($conn, $name, $email) !== false) {
+    //     header("location: ../signup.php?error=usernametaken");
+    //     exit();
+    // }
+
     // Create user
-    createUser($conn, $name, $email, $password);
+    createUser($conn, $name, $lastName, $email, $password);
 } 
 else {
     header("location: ../login.php");
