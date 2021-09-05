@@ -12,11 +12,13 @@ if (isset($_POST["submit"])) {
     }
 
     require_once "functions.inc.php";
+    require_once "database.inc.php";
 
-    if (noMatchPassword($password, $repeatPassword)) {
-        header("location: ../signup.php?error=passwordnomatch");
-        exit();
-    }
-}
+    // if (noMatchPassword($password, $repeatPassword)) {
+    //     header("location: ../signup.php?error=passwordnomatch");
+    //     exit();
+    // }
+
+    createUser($conn, $name, $email, $password);
 
 ?>
