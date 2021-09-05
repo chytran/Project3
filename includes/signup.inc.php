@@ -35,11 +35,13 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-    // if (uidExists($conn, $name, $email) !== false) {
-    //     header("location: ../signup.php?error=usernametaken");
-    //     exit();
-    // }
+    // if username exist
+    if (uidExists($conn, $name, $email) !== false) {
+        header("location: ../signup.php?error=usernametaken");
+        exit();
+    }
 
+    // Create user
     createUser($conn, $name, $email, $password);
 } 
 else {
