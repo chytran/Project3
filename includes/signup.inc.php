@@ -14,13 +14,35 @@ if (isset($_POST["submit"])) {
     require_once "functions.inc.php";
     require_once "database.inc.php";
 
-    // if (noMatchPassword($password, $repeatPassword)) {
-    //     header("location: ../signup.php?error=passwordnomatch");
+    if (noMatchPassword($password, $repeatPassword)) {
+        header("location: ../signup.php?error=passwordnomatch");
+        exit();
+    }
+
+    // Error Catching
+    if (emptyInputSignup($name, $email, $password, $repeatPassword)) {
+        header("location: ../signup.php?error=emptyinput");
+        exit();
+    }
+
+    if (invalidEmail($email) !== false) {
+        header("location: ../signup.php?error=invalidEmail");
+        exit();
+    }
+
+    if (invalidName($name) !== false) {
+        header("location: ../signup.php?error=invalidName");
+        exit();
+    }
+
+    // if (uidExists($conn, $name, $email) !== false) {
+    //     header("location: ../signup.php?error=usernametaken");
     //     exit();
     // }
 
-    // Error Catching
-
     createUser($conn, $name, $email, $password);
+} 
+else {
+    header("location: ../login.php");
+    exit();
 }
-?>
