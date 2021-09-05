@@ -6,7 +6,7 @@ if (isset($_POST["submit"])) {
     $password = filter_input(INPUT_POST, 'password');
     $repeatPassword = filter_input(INPUT_POST, 'passRepeat');
 
-    if (!$name || !$email || !$password || $repeatPassword) {
+    if (!$name || !$email || !$password || !$repeatPassword) {
         header("location: ../signup.php?error=emptyinput");
         exit();
     }
@@ -19,6 +19,8 @@ if (isset($_POST["submit"])) {
     //     exit();
     // }
 
-    createUser($conn, $name, $email, $password);
+    // Error Catching
 
+    createUser($conn, $name, $email, $password);
+}
 ?>
