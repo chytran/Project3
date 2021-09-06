@@ -102,7 +102,7 @@ function emptyInputLogin($email, $password) {
     else {
         $result = false;
     }
-    $result;
+    return $result;
 }
 
 function loginUser($conn, $username, $password) {
@@ -120,11 +120,12 @@ function loginUser($conn, $username, $password) {
         header("location: ../login.php?error=wrongpassword");
         exit();
     }
+
     else if ($checkPwd === true) {
         session_start();
         $_SESSION["userid"] = $uidExists["id"];
         $_SESSION["userEmail"] = $uidExists["userEmail"];
-        header("location: ../home.php");
+        header("location: ../index.php");
         exit();
     }
 }

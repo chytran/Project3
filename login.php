@@ -20,7 +20,7 @@
         <div class="right__side flex__column">
             <h2 class="signup__title">Sign in</h2>
             <p class="right__text">Please enter your information to sign up now!</p>
-            <form action="includes/signup.inc.php" method="post" class="form flex__column" id="form">
+            <form action="includes/login.inc.php" method="post" class="form flex__column" id="form">
 
                 <div class="email__container input__design"> 
                     <div class="input__extra__container">
