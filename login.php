@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-                <input type="submit" class="button">
+                <input type="submit" name="submit" class="button">
             </form>
         </div>
     </section>
