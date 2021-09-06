@@ -4,23 +4,29 @@
 
 <header class="header" id="header">
     <nav class="nav container">
-        <a href="#" class="nav__logo">Portfolio</a>
+        <a href="#" class="nav__logo">Travel</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Home</a>
+                    <a href="#home" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Home</a>
+                    <a href="#about" class="nav__link">About</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Home</a>
+                    <a href="#discover" class="nav__link">Discover</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Home</a>
+                    <a href="#place" class="nav__link">Place</a>
                 </li>
             </ul>
+
+            <i class="ri-close-line nav__close" id="nav-close"></i>
+        </div>
+
+        <div style="cursor: pointer;" class="nav__toggle" id="nav-toggle">
+            <i class="ri-function-line"></i>
         </div>
     </nav>
 </header>

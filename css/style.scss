@@ -365,6 +365,66 @@ input {
 
 }
 
+/*======================== HEADER ========================*/
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: transparent;
+}
+
+/*======================== NAV ========================*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo,
+.nav__toggle {
+    color: var(--main-white);
+}
+
+.nav__logo {
+    font-weight: var(--font-semi-bold);
+}
+
+.nav__menu {
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu {
+        position: fixed;
+        background-color: var(--body-color);
+        top: 0;
+        // right: -100%;
+        right: 0;
+        width: 70%;
+        height: 100%;
+        padding: 3rem;
+        transition: 0.4s;
+    }
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.nav__link:hover {
+    color: var(--main-black);
+}
+
+.nav__close {
+    position: absolute;
+}
+
+
 /*======================== SEARCHRESULT.PHP ========================*/
 
 
