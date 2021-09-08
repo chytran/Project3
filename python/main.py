@@ -18,3 +18,4 @@ for list in lists:
     # Bathroom
     price = lists.find_all('a', class_="list-card-price")
     price = lists.find_all('a', class_="list-card-price")
+
