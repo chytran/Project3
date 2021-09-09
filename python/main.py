@@ -161,6 +161,7 @@ df17 = pd.DataFrame()
 
 #----------------------- 3rd page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -190,97 +191,101 @@ df3['links'] = df3['links'].replace('<a class="list-card-link" href="', ' ', reg
 df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 4th page ----------------------------------
-for i in soup3:
-    address3 = soup3.find_all (class_='list-card-addr')
-    price3 = list(soup3.find_all (class_='list-card-price'))
-    beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
-    details3 = soup3.find_all ('div', {'class': 'list-card-details'})
+for i in soup4:
+    soup = soup4
+    address4 = soup4.find_all (class_='list-card-addr')
+    price4 = list(soup4.find_all (class_='list-card-price'))
+    beds4 = list(soup4.find_all ("ul", class_='list-card-details'))
+    details4 = soup4.find_all ('div', {'class': 'list-card-details'})
 
     # create dataframe columns
-    df3['prices'] = price3
-    df3['beds'] = beds3
-    df3['address'] = address3
+    df4['prices'] = price4
+    df4['beds'] = beds4
+    df4['address'] = address4
 
 # url list
 urls = []
 
 # Check each article
-for link in soup3.find_all("article"):
+for link in soup4.find_all("article"):
     href = link.find('a', class_="list-card-link")
     addresses = href.find('address') #find address tag
     addresses.extract()
     urls.append(href)
 
 # import url into a links column
-df3['links'] = urls
-df3['links'] = df3['links'].astype('str')
+df4['links'] = urls
+df4['links'] = df4['links'].astype('str')
 
 # remove html tags
-df3['links'] = df3['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
-df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
+df4['links'] = df4['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
+df4['links'] = df4['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 5th page ----------------------------------
-for i in soup3:
-    address3 = soup3.find_all (class_='list-card-addr')
-    price3 = list(soup3.find_all (class_='list-card-price'))
-    beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
-    details3 = soup3.find_all ('div', {'class': 'list-card-details'})
+for i in soup5:
+    soup = soup5
+    address5 = soup5.find_all (class_='list-card-addr')
+    price5 = list(soup5.find_all (class_='list-card-price'))
+    beds5 = list(soup5.find_all ("ul", class_='list-card-details'))
+    details5 = soup5.find_all ('div', {'class': 'list-card-details'})
 
     # create dataframe columns
-    df3['prices'] = price3
-    df3['beds'] = beds3
-    df3['address'] = address3
+    df5['prices'] = price5
+    df5['beds'] = beds5
+    df5['address'] = address5
 
 # url list
 urls = []
 
 # Check each article
-for link in soup3.find_all("article"):
+for link in soup5.find_all("article"):
     href = link.find('a', class_="list-card-link")
     addresses = href.find('address') #find address tag
     addresses.extract()
     urls.append(href)
 
 # import url into a links column
-df3['links'] = urls
-df3['links'] = df3['links'].astype('str')
+df5['links'] = urls
+df5['links'] = df5['links'].astype('str')
 
 # remove html tags
-df3['links'] = df3['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
-df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
+df5['links'] = df5['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
+df5['links'] = df5['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 6th page ----------------------------------
-for i in soup3:
-    address3 = soup3.find_all (class_='list-card-addr')
-    price3 = list(soup3.find_all (class_='list-card-price'))
-    beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
-    details3 = soup3.find_all ('div', {'class': 'list-card-details'})
+for i in soup6:
+    soup = soup6
+    address6 = soup6.find_all (class_='list-card-addr')
+    price6 = list(soup6.find_all (class_='list-card-price'))
+    beds6 = list(soup6.find_all ("ul", class_='list-card-details'))
+    details6 = soup6.find_all ('div', {'class': 'list-card-details'})
 
     # create dataframe columns
-    df3['prices'] = price3
-    df3['beds'] = beds3
-    df3['address'] = address3
+    df6['prices'] = price6
+    df6['beds'] = beds6
+    df6['address'] = address6
 
 # url list
 urls = []
 
 # Check each article
-for link in soup3.find_all("article"):
+for link in soup6.find_all("article"):
     href = link.find('a', class_="list-card-link")
     addresses = href.find('address') #find address tag
     addresses.extract()
     urls.append(href)
 
 # import url into a links column
-df3['links'] = urls
-df3['links'] = df3['links'].astype('str')
+df6['links'] = urls
+df6['links'] = df6['links'].astype('str')
 
 # remove html tags
-df3['links'] = df3['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
-df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
+df6['links'] = df6['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
+df6['links'] = df6['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 7th page ----------------------------------
 for i in soup3:
+    soup = soup7
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -311,6 +316,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 8th page ----------------------------------
 for i in soup3:
+    soup = soup8
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -341,6 +347,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 9th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -371,6 +378,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 10th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -401,6 +409,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 11th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -431,6 +440,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 12th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -461,6 +471,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 13th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -491,6 +502,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 14th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -521,6 +533,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 15th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -532,7 +545,7 @@ for i in soup3:
     df3['address'] = address3
 
 # url list
-urls = []
+urls = [] 
 
 # Check each article
 for link in soup3.find_all("article"):
@@ -551,6 +564,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 16th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
@@ -581,6 +595,7 @@ df3['links'] = df3['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 #----------------------- 17th page ----------------------------------
 for i in soup3:
+    soup = soup3
     address3 = soup3.find_all (class_='list-card-addr')
     price3 = list(soup3.find_all (class_='list-card-price'))
     beds3 = list(soup3.find_all ("ul", class_='list-card-details'))
