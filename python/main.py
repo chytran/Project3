@@ -266,7 +266,7 @@ for i in soup6:
     df6['address'] = address6
 
 # url list
-7 = []
+urls = []
 
 # Check each article
 for link in soup6.find_all("article"):
@@ -624,12 +624,61 @@ df17['links'] = df17['links'].astype('str')
 df17['links'] = df17['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
 df17['links'] = df17['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
+df = df.append(df3, ignore_index = True)
+df = df.append(df4, ignore_index = True)
+df = df.append(df5, ignore_index = True)
+df = df.append(df6, ignore_index = True)
+df = df.append(df7, ignore_index = True)
+df = df.append(df8, ignore_index = True)
+df = df.append(df9, ignore_index = True)
+df = df.append(df10, ignore_index = True)
+df = df.append(df11, ignore_index = True)
+df = df.append(df12, ignore_index = True)
+df = df.append(df13, ignore_index = True)
+df = df.append(df14, ignore_index = True)
+df = df.append(df15, ignore_index = True)
+df = df.append(df16, ignore_index = True)
+df = df.append(df17, ignore_index = True)
 
+#convert columns to str
+df['prices'] = df['prices'].astype('str')
+df['address'] = df['address'].astype('str')
+df['beds'] = df['beds'].astype('str')
 
+#remove html tags
+df['prices'] = df['prices'].replace('<div class="list-card-price">', ' ', regex=True)
+df['address'] = df['address'].replace('<address class="list-card-addr">', ' ', regex=True)
+df['prices'] = df['prices'].replace('</div>', ' ', regex=True)
+df['address'] = df['address'].replace('</address>', ' ', regex=True)
+df['prices'] = df['prices'].str.replace(r'\D', '')
 
+#remove html tags from beds column
+df['beds'] = df['beds'].replace('<ul class="list-card-details"><li>', ' ', regex=True)
+df['beds'] = df['beds'].replace('<abbr class="list-card-label"> <!-- -->bds</abbr></li><li>', ' ', regex=True)
+df['beds'] = df['beds'].replace('<abbr class="list-card-label"> <!-- -->ba</abbr></li><li>', ' ', regex=True)
+df['beds'] = df['beds'].replace('<abbr class="list-card-label"> <!-- -->bd</abbr></li><li>', ' ', regex=True)
+df['beds'] = df['beds'].replace('<abbr class="list-card-label"> <!-- -->sqft</abbr></li></ul>', ' ', regex=True)
+df['beds'] = df['beds'].replace('Studio</li><li>', '0 ', regex=True)
 
+#split beds column into beds, bath and sq_feet
+df[['beds','baths','sq_feet']] = df.beds.str.split(expand=True)
 
+#remove commas from sq_feet and convert to float
+df.replace(',','', regex=True, inplace=True)
 
+#drop nulls
+df = df[(df['prices'] != '') & (df['prices']!= ' ')]
+
+#convert column to float
+df['prices'] = df['prices'].astype('float')
+# df['sq_feet'] = df['sq_feet'].astype('float')
+
+print('The column datatypes are:')
+print(df.dtypes)
+print('The dataframe shape is:', df.shape)
+
+#rearrange the columns
+df = df[['prices', 'address', 'links', 'beds', 'baths', 'sq_feet']]
 
 # soup = bs(r.text, 'html.parser')
 
