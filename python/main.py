@@ -10,13 +10,21 @@ pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 
-req_headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36'}
+# req_headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36'}
+req_headers = {
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-US,en;q=0.8',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
+}
+
 url = 'https://www.zillow.com/homes/San-Jose,-CA_rb/'
 
 with requests.Session() as s:
     city = 'san-jose-ca'
 
-    urll = 'https://www.zillow.com/'+city+'/1_p/?searchQueryState=%7B%22pagination%22%3A%7B%22currentPage%22%3A2%7D%2C%22usersSearchTerm%22%3A%22San%20Jose%2C%20CA%22%2C%22mapBounds%22%3A%7B%22west%22%3A-122.41471486914062%2C%22east%22%3A-121.33530813085937%2C%22south%22%3A36.97251819044095%2C%22north%22%3A37.64383616047898%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A33839%2C%22regionType%22%3A6%7D%5D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%7D'
+    url1 = 'https://www.zillow.com/'+city+'/1_p/?searchQueryState=%7B%22pagination%22%3A%7B%22currentPage%22%3A2%7D%2C%22usersSearchTerm%22%3A%22San%20Jose%2C%20CA%22%2C%22mapBounds%22%3A%7B%22west%22%3A-122.41471486914062%2C%22east%22%3A-121.33530813085937%2C%22south%22%3A36.97251819044095%2C%22north%22%3A37.64383616047898%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A33839%2C%22regionType%22%3A6%7D%5D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%7D'
     url2 = 'https://www.zillow.com/'+city+'/2_p/?searchQueryState=%7B%22pagination%22%3A%7B%22currentPage%22%3A2%7D%2C%22usersSearchTerm%22%3A%22San%20Jose%2C%20CA%22%2C%22mapBounds%22%3A%7B%22west%22%3A-122.41471486914062%2C%22east%22%3A-121.33530813085937%2C%22south%22%3A36.97251819044095%2C%22north%22%3A37.64383616047898%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A33839%2C%22regionType%22%3A6%7D%5D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%7D'
     url3 = 'https://www.zillow.com/'+city+'/3_p/?searchQueryState=%7B%22pagination%22%3A%7B%22currentPage%22%3A2%7D%2C%22usersSearchTerm%22%3A%22San%20Jose%2C%20CA%22%2C%22mapBounds%22%3A%7B%22west%22%3A-122.41471486914062%2C%22east%22%3A-121.33530813085937%2C%22south%22%3A36.97251819044095%2C%22north%22%3A37.64383616047898%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A33839%2C%22regionType%22%3A6%7D%5D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%7D'
     url4 = 'https://www.zillow.com/'+city+'/4_p/?searchQueryState=%7B%22pagination%22%3A%7B%22currentPage%22%3A2%7D%2C%22usersSearchTerm%22%3A%22San%20Jose%2C%20CA%22%2C%22mapBounds%22%3A%7B%22west%22%3A-122.41471486914062%2C%22east%22%3A-121.33530813085937%2C%22south%22%3A36.97251819044095%2C%22north%22%3A37.64383616047898%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A33839%2C%22regionType%22%3A6%7D%5D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%7D'
@@ -52,9 +60,9 @@ with requests.Session() as s:
     r16 = s.get(url, headers=req_headers)
     r17 = s.get(url, headers=req_headers)
 
-    url_links = [ urll, url2, url3, url4, url5, url6, url7, url8, url9, 
+    url_links = [ url1, url2, url3, url4, url5, url6, url7, url8, url9, 
                 url10, url11, url12, url13, url14, url15, url16, url17, ]
-    print(url_links)
+    # print(url1)
 
 # Add contents of urls to soup variable from the urls
 soup1 = bs(r.content, 'html.parser')
@@ -74,6 +82,8 @@ soup14 = bs(r14.content, 'html.parser')
 soup15 = bs(r15.content, 'html.parser')
 soup16 = bs(r16.content, 'html.parser')
 soup17 = bs(r17.content, 'html.parser')
+
+# print(soup1)
 
 df = pd.DataFrame()
 df2 = pd.DataFrame()
@@ -95,17 +105,21 @@ urls = []
 # Check each article
 for link in soup1.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df['links'] = urls
 df['links'] = df['links'].astype('str')
 
-# remove html tags
-df['links'] = df['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
-df['links'] = df['links'].replace('" tabindex="0"></a>', ' ', regex=True)
+# # remove html tags
+# df['links'] = df['links'].replace('<a class="list-card-link" href="', ' ', regex=True)
+# df['links'] = df['links'].replace('" tabindex="0"></a>', ' ', regex=True)
 
 
 #----------------------- 2nd page ----------------------------------
@@ -127,9 +141,13 @@ urls = []
 # Check each article
 for link in soup2.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df2['links'] = urls
@@ -178,9 +196,13 @@ urls = []
 # Check each article
 for link in soup3.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df3['links'] = urls
@@ -209,9 +231,13 @@ urls = []
 # Check each article
 for link in soup4.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df4['links'] = urls
@@ -240,9 +266,13 @@ urls = []
 # Check each article
 for link in soup5.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df5['links'] = urls
@@ -271,9 +301,13 @@ urls = []
 # Check each article
 for link in soup6.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df6['links'] = urls
@@ -302,9 +336,13 @@ urls = []
 # Check each article
 for link in soup7.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df7['links'] = urls
@@ -333,9 +371,13 @@ urls = []
 # Check each article
 for link in soup8.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df8['links'] = urls
@@ -364,9 +406,13 @@ urls = []
 # Check each article
 for link in soup9.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df9['links'] = urls
@@ -395,9 +441,13 @@ urls = []
 # Check each article
 for link in soup10.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df10['links'] = urls
@@ -426,9 +476,13 @@ urls = []
 # Check each article
 for link in soup11.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df11['links'] = urls
@@ -457,9 +511,13 @@ urls = []
 # Check each article
 for link in soup12.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df12['links'] = urls
@@ -488,9 +546,13 @@ urls = []
 # Check each article
 for link in soup13.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df13['links'] = urls
@@ -519,9 +581,13 @@ urls = []
 # Check each article
 for link in soup14.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df14['links'] = urls
@@ -550,9 +616,13 @@ urls = []
 # Check each article
 for link in soup15.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df15['links'] = urls
@@ -581,9 +651,13 @@ urls = []
 # Check each article
 for link in soup16.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df16['links'] = urls
@@ -612,9 +686,13 @@ urls = []
 # Check each article
 for link in soup17.find_all("article"):
     href = link.find('a', class_="list-card-link")
-    addresses = href.find('address') #find address tag
-    addresses.extract()
-    urls.append(href)
+    if href == None:
+        addresses = None
+    else:
+        addresses = href.find('address',class_="list-card-addr").get_text()
+        # print(addresses)
+        urls.append(addresses)
+        urls = [x for x in urls if x is not None]
 
 # import url into a links column
 df17['links'] = urls
