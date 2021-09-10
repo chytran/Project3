@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: htmltext
+Version: 0.0.7
+Summary: Get title and main body text from an article in a web page
+Requires-Dist: beautifulsoup4
+Requires-Dist: lxml
+
+Bug Patched
+Home-page: https://github.com/RobinZhangWhyCoding/htmltext
+Author: Robin Zhang
+Author-email: whycoding@outlook.com
+License: UNKNOWN
+Description: HTMLText
+        =========
+        HTMLText is a simple tool to get main body text of articles in HTML web pages, such as news,bolg .etc.
+        
+        Installation:
+        -------------
+        	pip install htmltext
+        
+        Usage:
+        ------
+        	from htmltext import HTMLText
+        	
+        	title, text = HTMLText(html_data)
+        
+        Example:
+        --------
+        	import requests
+        	from htmltext import HTMLText
+        	
+        	r = requests.get(url_of_the_article)
+        	title, text = HTMLText(r.content)
+        	print(title)
+        	print(text)
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
