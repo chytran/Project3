@@ -47,30 +47,30 @@
             <div class="smoke" id="smoke">
                 <ul class="smoke1">
                     <ul>
-                        <li>o</li>
-                        <li>s</li>
-                        <li>w</li>
+                        <li>z</li>
+                        <li>z</li>
+                        <li>z</li>
                         
                     </ul>
                     <ul>
-                        <li>o</li>
-                        <li>s</li>
-                        <li>t</li>
-                        <li>c</li>
-                        <li>c</li>
+                        <li>z</li>
+                        <li>z</li>
+                        <li>z</li>
+                        <li>z</li>
+                        <li>z</li>
 
                     </ul>
                     <ul>
-                        <li>o</li>
-                        <li>s</li>
-                        <li>t</li>
-                        <li>c</li>
+                        <li>z</li>
+                        <li>z</li>
+                        <li>z</li>
+                        <li>z</li>
 
                     </ul>
                     <ul>
-                        <li>o</li>
-                        <li>s</li>
-                        <li>w</li>
+                        <li>z</li>
+                        <li>z</li>
+                        <li>z</li>
                     </ul>
                 </ul>
             </div>

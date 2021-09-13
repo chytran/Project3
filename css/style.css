@@ -446,6 +446,11 @@ input {
 .nav__logo,
 .nav__toggle {
   color: var(--main-white);
+  opacity: 0.3s;
+}
+
+.nav__toggle:hover {
+  opacity: 0.8;
 }
 
 .nav__logo {
@@ -502,7 +507,7 @@ input {
   top: 0.75rem;
   right: 1rem;
   font-size: 1.5rem;
-  color: var(--title-color);
+  color: var(--main-white);
   cursor: pointer;
 }
 
@@ -522,7 +527,7 @@ input {
 
 .scroll-header .nav__logo,
 .scroll-header .nav__toggle {
-  color: var(--title-color);
+  color: var(--main-white);
 }
 
 /*======================== HOME ========================*/
