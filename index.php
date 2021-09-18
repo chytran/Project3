@@ -87,6 +87,7 @@
                 </a>
             </div>
 
+            
             <div class="home__info">
                 <div>
                     <span class="home__info-title">5 best houses to visit</span>
