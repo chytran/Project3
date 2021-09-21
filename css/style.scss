@@ -164,7 +164,7 @@ input {
 }
 
 .hero {
-    width: 90%;
+    width: 100%;
     height: 80vh;
     position: relative;
 }
@@ -711,7 +711,14 @@ input {
     }
 }
 /*======================== SEARCHRESULT.PHP ========================*/
-
+.search__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
 
 /*======================== HOUSEDETAIL.PHP ========================*/
 
