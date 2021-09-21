@@ -40,8 +40,8 @@
         <div class="home__container container grid">
             <div class="home__data">
                 <span class="home__data-subtitle">Discover your place</span>
-                <h1 class="home__data-title">Explore The <br> Best <br> Beautiful <br> Houses</h1>
-                <a href="#" class="button">Explore</a>
+                <h1 class="home__data-title">Explore the best <br> beautiful houses</h1>
+                <a href="serachResult.php" class="button">Explore</a>
             </div>
 
             <div class="smoke" id="smoke">

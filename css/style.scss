@@ -510,6 +510,14 @@ input {
     row-gap: 3rem;
 }
 
+.home__data {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .home__data-subtitle,
 .home__data-title,
 .home__social-link,
@@ -521,12 +529,28 @@ input {
     display: block;
     font-weight: var(--font-semi-bold);
     margin-bottom: var(--mb-0-75);
+    font-size: 1rem;
 }
 
 .home__data-title {
     font-size: var(--biggest-font-size);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-2-5);
+}
+
+.home__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    .button {
+        cursor: pointer;
+    }
+}
+
+.search__result {
+    padding: 1rem;
 }
 
 .home__social {
