@@ -538,17 +538,6 @@ input {
     margin-bottom: var(--mb-2-5);
 }
 
-.home__form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-
-    .button {
-        cursor: pointer;
-    }
-}
-
 .search__result {
     padding: 1rem;
 }
@@ -718,6 +707,21 @@ input {
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    z-index: var(--z-tooltip);
+}
+
+.search__form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    z-index: var(--z-fixed);
+    margin-top: 10%;
+
+    .button {
+        cursor: pointer;
+    }
 }
 
 /*======================== HOUSEDETAIL.PHP ========================*/

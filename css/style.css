@@ -589,26 +589,6 @@ input {
   margin-bottom: var(--mb-2-5);
 }
 
-.home__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.home__form .button {
-  cursor: pointer;
-}
-
 .search__result {
   padding: 1rem;
 }
@@ -886,6 +866,30 @@ input {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: var(--z-tooltip);
+}
+
+.search__form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  z-index: var(--z-fixed);
+  margin-top: 10%;
+}
+
+.search__form .button {
+  cursor: pointer;
 }
 
 /*======================== HOUSEDETAIL.PHP ========================*/
