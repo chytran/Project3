@@ -41,6 +41,7 @@
     </form>
 </section>
 
+
 <script src="js/search.js"></script>
 
 <?php
