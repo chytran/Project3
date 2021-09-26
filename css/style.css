@@ -519,7 +519,6 @@ input {
 .show-menu,
 .show-menu2 {
   right: 0;
-  z-index: 1000;
 }
 
 /* Change background header */
@@ -597,6 +596,8 @@ input {
 
 .search__result {
   padding: 1rem;
+  position: relative;
+  z-index: 99;
 }
 
 .home__social {
@@ -864,27 +865,6 @@ input {
 }
 
 /*======================== SEARCHRESULT.PHP ========================*/
-.nav__menu {
-  position: relative;
-}
-
-@media screen and (max-width: 767px) {
-  .nav__menu2 {
-    position: fixed;
-    background-color: black;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100%;
-    -webkit-box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, 0.15);
-            box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, 0.15);
-    padding: 3rem;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    z-index: var(--z-high);
-  }
-}
-
 .hero__house {
   position: relative;
   width: 100%;

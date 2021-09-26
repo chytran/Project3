@@ -1,22 +1,22 @@
 /*==================== SHOW MENU =============================*/
-const navMenu2 = document.querySelector(".nav__menu2");
-const navToggle2 = document.getElementById("nav-toggle2");
-const navClose2 = document.getElementById("nav-close2");
+const navMenu = document.querySelector(".nav__menu");
+const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
 
 
 /*======== Menu Show ======*/
-if(navToggle2) {
-    navToggle2.addEventListener("click", () => {
-        // alert("hi");
-        navMenu2.classList.add("show-menu2");
+if(navToggle) {
+    navToggle.addEventListener("click", () => {
+        alert("hi");
+        navMenu.classList.add("show-menu");
     })
 }
 
 /*========== Menu Hidden ===========*/
 /* Validate if constant exists */
-if(navClose2){
-    navClose2.addEventListener("click", () => {
-        // alert("hi");
-        navMenu2.classList.remove("show-menu2");
+if(navClose){
+    navClose.addEventListener("click", () => {
+        alert("hi");
+        navMenu.classList.remove("show-menu");
     })
 }

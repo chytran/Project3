@@ -10,7 +10,7 @@
     <nav class="nav container">
         <a href="index.php" class="nav__logo">Home</a>
 
-        <div class="nav__menu2" id="nav-menu">
+        <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
                     <a href="index.php" class="nav__link">Home</a>
@@ -26,10 +26,10 @@
                 </li>
             </ul>
 
-            <i class="ri-close-line nav__close2" id="nav-close"></i>
+            <i class="ri-close-line nav__close" id="nav-close"></i>
         </div>
 
-        <div style="cursor: pointer;" class="nav__toggle2" id="nav-toggle2">
+        <div style="cursor: pointer;" class="nav__toggle" id="nav-toggle">
             <i class="ri-function-line"></i>
         </div>
     </nav>
