@@ -922,6 +922,7 @@ input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 1px #121212 solid;
 }
 
 /*======================== HOUSEDETAIL.PHP ========================*/

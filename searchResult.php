@@ -59,9 +59,12 @@
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<div class='house__info'>";
-                     echo "<p class='house__address'>" . $row['address'] . "</p>";
-                     echo "<p class='house__sqft'>" . $row['sqft'] . "</p>";
-                     echo "<p class='house__price'>" . $row['price'] . "</p>";
+                     echo "<p class='house__address'>" . 'Address: ' . $row['address'] . "</p>";
+                     echo "<p class='house__sqft'>" . 'Sqft: ' . $row['sqft'] . ' sqft' . "</p>";
+                     echo "<p class='house__price'>" . 'Price: $' . $row['price'] . "</p>";
+                     echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zip code'] . "</p>";
+                     echo "<p class='house__bedroom'>" . $row['bedroom'] . ' bedroom' . "</p>";
+                     echo "<p class='house__bathroom'>" . $row['bathroom'] . ' bathroom' . "</p>";
                 echo "</div>";
 
                 
