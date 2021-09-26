@@ -40,6 +40,7 @@
     /*============== z index =================*/
     --z-tooltip: 10;
     --z-fixed: 100;
+    --z-high: 1000;
 
     /*============== Hover overlay =================*/
     --img-transition: 0.3s;
@@ -413,7 +414,8 @@ input {
 }
 
 .nav__logo,
-.nav__toggle {
+.nav__toggle,
+.nav__toggle2 {
     color: var(--main-white);
     opacity: 0.3s;
 }
@@ -442,6 +444,7 @@ input {
         box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, .15);
         padding: 3rem;
         transition: 0.4s;
+        z-index: var(--z-high);
     }
 }
 
@@ -465,7 +468,8 @@ input {
     color: var(--main-black);
 }
 
-.nav__close {
+.nav__close,
+.nav__close2 {
     position: absolute;
     top: 0.75rem;
     right: 1rem;
@@ -475,8 +479,10 @@ input {
 }
 
 /* Show Menu */
-.show-menu {
+.show-menu,
+.show-menu2 {
     right: 0;
+    z-index: 1000;
 }
 
 /* Change background header */
@@ -700,6 +706,26 @@ input {
     }
 }
 /*======================== SEARCHRESULT.PHP ========================*/
+.nav__menu {
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu2 {
+        position: fixed;
+        background-color: black;
+        top: 0;
+        right: -100%;
+        // right: 0;
+        width: 70%;
+        height: 100%;
+        box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, .15);
+        padding: 3rem;
+        transition: 0.4s;
+        z-index: var(--z-high);
+    }
+}
+
 .hero__house {
     position: relative;
     width: 100%;
@@ -733,7 +759,7 @@ input {
 .map__container {
     margin-top: 5%;
     z-index: var(--z-fixed);
-    position: relative;
+    position: absolute;
 }
 
 .house__show {
@@ -746,7 +772,14 @@ input {
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    border: 1px #121212 solid;
+    border: 0.5px #121212 solid;
+}
+
+@media screen and (max-width: 767px) {
+    .map__container {
+        position: relative;
+        width: 500px;
+    }
 }
 /*======================== HOUSEDETAIL.PHP ========================*/
 

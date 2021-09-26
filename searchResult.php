@@ -8,12 +8,12 @@
 
 <header class="header" id="header">
     <nav class="nav container">
-        <a href="#" class="nav__logo">Home</a>
+        <a href="index.php" class="nav__logo">Home</a>
 
-        <div class="nav__menu" id="nav-menu">
+        <div class="nav__menu2" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#home" class="nav__link">Home</a>
+                    <a href="index.php" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
                     <a href="#about" class="nav__link">About</a>
@@ -26,10 +26,10 @@
                 </li>
             </ul>
 
-            <i class="ri-close-line nav__close" id="nav-close"></i>
+            <i class="ri-close-line nav__close2" id="nav-close"></i>
         </div>
 
-        <div style="cursor: pointer;" class="nav__toggle" id="nav-toggle">
+        <div style="cursor: pointer;" class="nav__toggle2" id="nav-toggle2">
             <i class="ri-function-line"></i>
         </div>
     </nav>
@@ -44,8 +44,8 @@
         <input type="submit" class="button" name="submit">
     </form>
 
-    <div class="map__container" style="height: 400px; width: 100%;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.370930560317!2d-121.89211318474916!3d37.3337261798421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fccbb4e751f57%3A0x7bb970c4219e6acd!2sSan%20Jos%C3%A9%20Museum%20of%20Art!5e0!3m2!1sen!2sus!4v1632683176648!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="map__container" style="height: 400px; width: 350px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.370930560317!2d-121.89211318474916!3d37.3337261798421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fccbb4e751f57%3A0x7bb970c4219e6acd!2sSan%20Jos%C3%A9%20Museum%20of%20Art!5e0!3m2!1sen!2sus!4v1632683176648!5m2!1sen!2sus" width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
 </section>
@@ -66,8 +66,6 @@
                      echo "<p class='house__bedroom'>" . $row['bedroom'] . ' bedroom' . "</p>";
                      echo "<p class='house__bathroom'>" . $row['bathroom'] . ' bathroom' . "</p>";
                 echo "</div>";
-
-                
             }
         }
 
