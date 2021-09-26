@@ -9,10 +9,10 @@
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#home" class="nav__link">Home</a>
+                    <a href="index.php" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#about" class="nav__link">About</a>
+                    <a href="searchResult.php" class="nav__link">Search</a>
                 </li>
                 <li class="nav__item">
                     <a href="#discover" class="nav__link">Discover</a>
@@ -37,11 +37,15 @@
     <section class="home" id="home">
         <img src="image/search-background.jpg" alt="" class="home__img">
 
-        <div class="home__container container grid">
+        <div class="home__container container grid">  
             <div class="home__data">
                 <span class="home__data-subtitle">Discover your place</span>
                 <h1 class="home__data-title">Explore the best <br> beautiful houses</h1>
-                <a style="margin-top: -1rem;" href="searchResult.php" class="button">Explore</a>
+                <a style="margin-top: -1rem;" href="javascript:delay('searchResult.php')" class="button goSearch">Explore</a>
+            </div>
+
+            <div class="cloud" id="cloud">
+                <img class="clouds" src="image/cloud.png" alt="">
             </div>
 
             <div class="smoke" id="smoke">
@@ -104,7 +108,16 @@
     </section>
 </main>
 <script src="js/main.js"></script>
+<script>
+    const cloud = document.querySelector(".clouds");
 
+    function delay(page) {
+        cloud.classList.add("cloud-call");
+        setTimeout(function() {
+            window.location = page;
+        }, 2000)
+    }
+</script>
 <?php
     include_once 'components/footer.php';
 ?>

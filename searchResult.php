@@ -16,7 +16,7 @@
                     <a href="index.php" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#about" class="nav__link">About</a>
+                    <a href="searchResult.php" class="nav__link">Search</a>
                 </li>
                 <li class="nav__item">
                     <a href="#discover" class="nav__link">Discover</a>
