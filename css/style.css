@@ -858,6 +858,12 @@ input {
 }
 
 /*======================== SEARCHRESULT.PHP ========================*/
+.hero__house {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
 .search__img {
   position: absolute;
   top: 0;
@@ -890,6 +896,32 @@ input {
 
 .search__form .button {
   cursor: pointer;
+}
+
+.map__container {
+  margin-top: 5%;
+  z-index: var(--z-fixed);
+  position: relative;
+}
+
+.house__show {
+  z-index: var(--z-fixed);
+  position: relative;
+}
+
+.house__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /*======================== HOUSEDETAIL.PHP ========================*/
