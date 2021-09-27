@@ -41,7 +41,7 @@
             <div class="home__data">
                 <span class="home__data-subtitle">Discover your place</span>
                 <h1 class="home__data-title">Explore the best <br> beautiful houses</h1>
-                <a style="margin-top: -1rem;" href="javascript:delay('searchResult.php')" class="button goSearch">Explore</a>
+                <a style="margin-top: -1rem;" href="javascript:delay('searchResult.php');" class="button goSearch">Explore</a>
             </div>
 
             <div class="cloud" id="cloud">
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="home__info-overlay">
-                    <img src="/assets/img/home2.jpg" alt="" class="home__info-img">
+                    <img style="height: 50px;" src="image/signup.jpg" alt="" class="home__info-img">
                 </div>
             </div>
         </div>
@@ -109,10 +109,10 @@
 </main>
 <script src="js/main.js"></script>
 <script>
-    const cloud = document.querySelector(".clouds");
+    const cloudi = document.querySelector(".clouds");
 
     function delay(page) {
-        cloud.classList.add("cloud-call");
+        cloudi.classList.add("cloud-call");
         setTimeout(function() {
             window.location = page;
         }, 2000)

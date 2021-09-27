@@ -23,12 +23,3 @@ if(navClose){
 
 
 /*========================== CLOUDS =========================*/
-const cloud = document.querySelector(".clouds");
-const exploreBtn = document.querySelector("#searching");
-
-exploreBtn.addEventListener("click", function() {
-    setTimeout(function() {
-        alert("How's it going");
-        console.log("hi");
-    }, 4000);
-});
