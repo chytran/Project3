@@ -7,7 +7,7 @@ const navClose = document.getElementById("nav-close");
 /*======== Menu Show ======*/
 if(navToggle) {
     navToggle.addEventListener("click", () => {
-        alert("hi");
+        // alert("hi");
         navMenu.classList.add("show-menu");
     })
 }
@@ -16,7 +16,7 @@ if(navToggle) {
 /* Validate if constant exists */
 if(navClose){
     navClose.addEventListener("click", () => {
-        alert("hi");
+        // alert("hi");
         navMenu.classList.remove("show-menu");
     })
 }
