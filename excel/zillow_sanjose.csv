@@ -1,4 +1,3 @@
-Address,sqft,info,price,url,latitude,longitude,zip code,bedroom,bathroom,ID,City
 "527 Mclaughlin Ave #612, San Jose, CA 95116",285,"1 bd1 ba2, 85 sqft",150000,https://www.zillow.com/homedetails/527-McLaughlin-Ave-612-San-Jose-CA-95116/2068461853_zpid/,37.339108,-121.861856,95116,1,2,1,San Jose
 "5308 Borneo Cir, San Jose, CA 95123",1122,"2 bds2 ba1,122 sqft",609000,https://www.zillow.com/homedetails/5308-Borneo-Cir-San-Jose-CA-95123/19827465_zpid/,37.255732,-121.829183,95123,2,2,2,San Jose
 "6441 Hesket Ct, San Jose, CA 95123",1868,"4 bds2 ba1,868 sqft",1299888,https://www.zillow.com/homedetails/6441-Hesket-Ct-San-Jose-CA-95123/19824399_zpid/,37.227404,-121.810192,95123,4,2,3,San Jose

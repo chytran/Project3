@@ -39,7 +39,7 @@
 <section class="search__result hero__house" style="background-color: black;">
     <img src="image/resultpage.jpg" alt="" class="search__img">
 
-    <form action="includes/houseDetail.inc.php" method="post" class="search__form">
+    <form action="searchResult.php" method="post" class="search__form">
         <input type="text" name="search" class="search__result">
         <input type="submit" class="button" name="submit">
     </form>
@@ -51,25 +51,29 @@
 </section>
 
 <section class="house__show hero__house" id="house-show">
-    <?php
-        $sql = "SELECT * FROM houses;";
-        $result = mysqli_query($conn, $sql);
-        $resultCheck = mysqli_num_rows($result);
+<?php
+if (isset($_POST['submit'])) {
+    $search = mysqli_real_escape_string($conn, $_POST['search']); 
+    $sql = "SELECT * FROM house WHERE city LIKE '%$search%'";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
 
-        if ($resultCheck > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='house__info'>";
-                     echo "<p class='house__address'>" . 'Address: ' . $row['address'] . "</p>";
-                     echo "<p class='house__sqft'>" . 'Sqft: ' . $row['sqft'] . ' sqft' . "</p>";
-                     echo "<p class='house__price'>" . 'Price: $' . $row['price'] . "</p>";
-                     echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zip code'] . "</p>";
-                     echo "<p class='house__bedroom'>" . $row['bedroom'] . ' bedroom' . "</p>";
-                     echo "<p class='house__bathroom'>" . $row['bathroom'] . ' bathroom' . "</p>";
-                echo "</div>";
-            }
+    if ($resultCheck > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<div class='house__info'>";
+                    echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
+                    echo "<p class='house__sqft'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
+                    echo "<p class='house__price'>" . 'Price: $' . $row['Price'] . "</p>";
+                    echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['Zip Code'] . "</p>";
+                    echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
+                    echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
+            echo "</div>";
         }
-
-    ?>
+    }   else {
+         echo "There are no results matching your search!";
+    }
+}
+?>
 </section>
 
 
