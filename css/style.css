@@ -1059,6 +1059,12 @@ input {
   .home__data-subtitle {
     font-size: 1.35rem;
   }
+  .home__info {
+    margin-right: 3rem;
+  }
+  .home__social-link {
+    font-size: 2.0rem;
+  }
 }
 
 @media screen and (min-width: 789px) and (max-width: 1200px) {
@@ -1076,6 +1082,12 @@ input {
   }
   .smoke {
     display: none;
+  }
+  .home__social-link {
+    font-size: 1.75rem;
+  }
+  .home__info {
+    margin-right: 3rem;
   }
 }
 
