@@ -988,4 +988,103 @@ input {
 
 /*======================== HOUSEDETAIL.PHP ========================*/
 /*======================== FOOTER.PHP ========================*/
+/*======================== MEDIA QUERIES ========================*/
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__link {
+    color: var(--main-white);
+    text-transform: initial;
+  }
+  .nav__link:hover {
+    color: var(--main-white);
+  }
+  .nav__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .nav__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-column-gap: 4rem;
+            column-gap: 4rem;
+  }
+  .nav__toggle, .nav__close {
+    display: none;
+  }
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .home__container {
+    height: 100vh;
+    -ms-grid-rows: 1.8fr 0.5fr;
+        grid-template-rows: 1.8fr 0.5fr;
+    width: 100%;
+  }
+  .home__social {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-bottom: 3rem;
+    -webkit-column-gap: 2.5rem;
+            column-gap: 2.5rem;
+  }
+  .home__info {
+    bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 2000px;
+  }
+  .nav__link {
+    font-size: 1.45rem;
+  }
+  .nav__logo {
+    font-size: 1.45rem;
+  }
+  .home__data-subtitle {
+    font-size: 1.35rem;
+  }
+}
+
+@media screen and (min-width: 789px) and (max-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+  .nav__link {
+    font-size: 1.35rem;
+  }
+  .nav__logo {
+    font-size: 1.35rem;
+  }
+  .home__data-subtitle {
+    font-size: 1.25rem;
+  }
+  .smoke {
+    display: none;
+  }
+}
+
+@media screen and (min-height: 721px) {
+  body {
+    margin: 0;
+  }
+  .home__containe, .home__img {
+    height: 100vh;
+  }
+}
 /*# sourceMappingURL=style.css.map */

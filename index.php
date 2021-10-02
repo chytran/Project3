@@ -14,9 +14,9 @@
                 <li class="nav__item">
                     <a href="searchResult.php" class="nav__link">Search</a>
                 </li>
-                <li class="nav__item">
+                <!-- <li class="nav__item">
                     <a href="#discover" class="nav__link">Discover</a>
-                </li>
+                </li> -->
                 <li class="nav__item">
                     <a href="login.php" class="nav__link">Login</a>
                 </li>
