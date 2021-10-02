@@ -40,7 +40,7 @@
     <img src="image/resultpage.jpg" alt="" class="search__img">
 
     <form action="searchResult.php" method="post" class="search__form">
-        <input type="text" name="search" class="search__result">
+        <input type="text" name="search" class="search__result" placeholder="Enter a city...">
         <input type="submit" class="button" name="submit">
     </form>
 
