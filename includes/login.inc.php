@@ -1,6 +1,7 @@
 <?php
 
 if (isset($_POST["submit"])) {
+
     $email = filter_input(INPUT_POST, 'email');
     $password = filter_input(INPUT_POST, 'password');
 
@@ -13,6 +14,7 @@ if (isset($_POST["submit"])) {
     }
 
     loginUser($conn, $email, $password);
+    session_start();
 } 
 else {
     header("location: ../login.php");

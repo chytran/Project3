@@ -1,4 +1,7 @@
 <?php
+    session_start();
+?>
+<?php
     include_once 'components/header.php';
 ?>
 
@@ -18,7 +21,11 @@
                     <a href="#discover" class="nav__link">Discover</a>
                 </li> -->
                 <li class="nav__item">
-                    <a href="login.php" class="nav__link">Login</a>
+                    <?php if(isset($_SESSION["user"])) { ?>
+                        <a href="login.php" class="nav__link">Login</a>
+                    <?php } else { ?>
+                        <a href="includes/logout.inc.php" class="nav__link">Logout</a>
+                    <?php } ?>
                 </li>
             </ul>
 
