@@ -40,7 +40,7 @@
     <img src="image/resultpage.jpg" alt="" class="search__img">
 
     <form action="searchResult.php" method="post" class="search__form">
-        <input type="text" name="search" class="search__result" placeholder="Enter a city...">
+        <input type="text" name="search" class="search__result" placeholder="Enter a city, address, property Type or sqft...">
         <input type="submit" class="button" name="submit">
     </form>
 
@@ -54,7 +54,13 @@
 <?php
 if (isset($_POST['submit'])) {
     $search = mysqli_real_escape_string($conn, $_POST['search']); 
-    $sql = "SELECT * FROM house WHERE city LIKE '%$search%'";
+    $sql = "SELECT * FROM house WHERE 
+            City LIKE '%$search%' OR 
+            Sqft LIKE '%$search%' OR
+            Address LIKE '%$search%' OR 
+            propertyType LIKE '%$search%' OR
+            zipCode LIKE '%$search%'
+            ";
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
 
@@ -64,9 +70,11 @@ if (isset($_POST['submit'])) {
                     echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
                     echo "<p class='house__sqft'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
                     echo "<p class='house__price'>" . 'Price: $' . $row['Price'] . "</p>";
-                    echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['Zip Code'] . "</p>";
+                    echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
                     echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
                     echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
+                    echo "<p class='house__bathroom'>" . 'Address: ' . $row['Address'] . "</p>";
+                    echo "<p class='house__bathroom'>" . 'Property Type: ' . $row['propertyType'] . "</p>";
             echo "</div>";
         }
     }   else {
