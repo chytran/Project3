@@ -81,6 +81,7 @@ if (isset($_POST['submit'])) {
          echo "There are no results matching your search!";
     }
 }
+
 ?>
 </section>
 
