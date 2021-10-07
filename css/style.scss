@@ -858,6 +858,11 @@ input {
     .home__info {
         bottom: 3rem;
     }
+    .search__result__text {
+        padding: 1rem;
+        width: 350px;
+        position: relative;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -878,6 +883,11 @@ input {
     }
     .home__social-link {
         font-size: 2.0rem;
+    }
+    .search__result__text {
+        padding: 1rem;
+        width: 450px;
+        position: relative;
     }
 }
 
@@ -908,7 +918,7 @@ input {
     // search
     .search__result__text {
         padding: 1rem;
-        width: 35%;
+        width: 400px;
         position: relative;
     }
 
@@ -924,5 +934,10 @@ input {
     }
     .home__containe, .home__img {
         height: 100vh;
+    }
+    .search__result__text {
+        padding: 1rem;
+        width: 380px;
+        position: relative;
     }
 }
