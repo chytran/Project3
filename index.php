@@ -21,10 +21,10 @@
                     <a href="#discover" class="nav__link">Discover</a>
                 </li> -->
                 <li class="nav__item">
-                    <?php if(isset($_SESSION["user"])) { ?>
-                        <a href="login.php" class="nav__link">Login</a>
-                    <?php } else { ?>
+                    <?php if(isset($_SESSION["userid"]) || isset($_SESSION["useremail"])) { ?>
                         <a href="includes/logout.inc.php" class="nav__link">Logout</a>
+                    <?php } else { ?>
+                        <a href="login.php" class="nav__link">Login</a>
                     <?php } ?>
                 </li>
             </ul>
