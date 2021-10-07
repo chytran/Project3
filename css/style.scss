@@ -751,8 +751,8 @@ input {
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
 }
 
@@ -767,6 +767,7 @@ input {
 }
 
 .search__form {
+    align-self: center;
     position: relative;
     display: flex;
     justify-content: center;
@@ -802,6 +803,7 @@ input {
     align-content: center;
     flex-direction: column;
     border: 0.5px #121212 solid;
+    width: 100%;
 }
 
 @media screen and (max-width: 767px) {

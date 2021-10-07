@@ -1,4 +1,7 @@
 <?php
+    session_start();
+?>
+<?php
     include_once 'components/header.php';
 ?>
 
@@ -19,10 +22,11 @@
                     <a href="searchResult.php" class="nav__link">Search</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#discover" class="nav__link">Discover</a>
-                </li>
-                <li class="nav__item">
-                    <a href="login.php" class="nav__link">Login</a>
+                    <?php if(isset($_SESSION["userid"]) || isset($_SESSION["useremail"])) { ?>
+                        <a href="includes/logout.inc.php" class="nav__link">Logout</a>
+                    <?php } else { ?>
+                        <a href="login.php" class="nav__link">Login</a>
+                    <?php } ?>
                 </li>
             </ul>
 
@@ -64,27 +68,28 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
 
-    
     if ($resultCheck > 0) {
+        echo "<section class='house__show hero__house' id='house-show'>";
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='house__info'>";
-                    echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
-                    echo "<p class='house__sqft'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
-                    echo "<p class='house__price'>" . 'Price: $' . $row['Price'] . "</p>";
-                    echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
-                    echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
-                    echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
-                    echo "<p class='house__bathroom'>" . 'Address: ' . $row['Address'] . "</p>";
-                    echo "<p class='house__bathroom'>" . 'Property Type: ' . $row['propertyType'] . "</p>";
+                echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
+                echo "<p class='house__sqft'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
+                echo "<p class='house__price'>" . 'Price: $' . $row['Price'] . "</p>";
+                echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
+                echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
+                echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
+                echo "<p class='house__bathroom'>" . 'Address: ' . $row['Address'] . "</p>";
+                echo "<p class='house__bathroom'>" . 'Property Type: ' . $row['propertyType'] . "</p>";
             echo "</div>";
         }
-    }   else {
+        echo "</section>";
+    }  else {
          echo "There are no results matching your search!";
     }
 }
 
 ?>
-</section>
+
 
 
 <script src="js/search.js"></script>

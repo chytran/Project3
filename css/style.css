@@ -926,12 +926,12 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -950,6 +950,8 @@ input {
 }
 
 .search__form {
+  -ms-flex-item-align: center;
+      align-self: center;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1003,6 +1005,7 @@ input {
       -ms-flex-direction: column;
           flex-direction: column;
   border: 0.5px #121212 solid;
+  width: 100%;
 }
 
 @media screen and (max-width: 767px) {
