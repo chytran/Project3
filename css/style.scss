@@ -551,6 +551,9 @@ input {
 
 .search__result__text {
     padding: 1rem;
+    width: 35%;
+    width: 500px;
+    position: relative;
 }
 
 .home__social {
@@ -747,6 +750,10 @@ input {
     position: relative;
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .search__img {
@@ -774,9 +781,14 @@ input {
 }
 
 .map__container {
-    margin-top: 30%;
+    margin-top: 10%;
+    align-self: center;
     z-index: var(--z-fixed);
-    position: absolute;
+    position: relative;
+    height: 400px;
+    width: 350px;
+    z-index: 100;
+
 }
 
 .house__show {
@@ -795,7 +807,6 @@ input {
 @media screen and (max-width: 767px) {
     .map__container {
         position: relative;
-        width: 500px;
     }
 }
 /*======================== HOUSEDETAIL.PHP ========================*/
@@ -897,9 +908,13 @@ input {
     // search
     .search__result__text {
         padding: 1rem;
+        width: 35%;
         position: relative;
-        z-index: 99;
-        width: 4rem;
+    }
+
+    .map__container {
+        width: 700px;
+        height: 800px;
     }
 }
 
