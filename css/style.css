@@ -600,6 +600,10 @@ input {
   z-index: 99;
 }
 
+.search__result__text {
+  padding: 1rem;
+}
+
 .home__social {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1088,6 +1092,12 @@ input {
   }
   .home__info {
     margin-right: 3rem;
+  }
+  .search__result__text {
+    padding: 1rem;
+    position: relative;
+    z-index: 99;
+    width: 4rem;
   }
 }
 

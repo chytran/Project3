@@ -40,8 +40,8 @@
     <img src="image/resultpage.jpg" alt="" class="search__img">
 
     <form action="searchResult.php" method="post" class="search__form">
-        <input type="text" name="search" class="search__result" placeholder="Enter a city, address, property Type or sqft...">
-        <input type="submit" class="button" name="submit">
+        <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, property Type or sqft...">
+        <input type="submit" class="button search__button" name="submit">
     </form>
 
     <div class="map__container" style="height: 400px; width: 350px; position: relative; z-index: 100;">
