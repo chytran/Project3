@@ -44,7 +44,7 @@
     <img src="image/resultpage.jpg" alt="" class="search__img">
 
     <form action="searchResult.php" method="post" class="search__form">
-        <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, property Type or sqft...">
+        <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, zipcode, property type or sqft...">
         <input type="submit" class="button search__button" name="submit">
     </form>
 
