@@ -13,26 +13,36 @@
             $longitude = $row1["Longitude"];
             $locations[]=array ( 'lat'=>$latitude, 'lng'=>$longitude);
         }
+        echo "<div id='map-canvas' style='width: 800px; height: 500px;'>";
     }
 ?>
 <script>
-       //var myLatLng = {lat: -25.363, lng: 131.044};
-       function initMap() {
-        var myLatLng = {lat: -25.363, lng: 131.044};
+       var map = null;
+        function initialize() {
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: myLatLng,
-          scrollwheel: false,
-          zoom: 4
-         });
+        var lat='<?php echo $latitude?>';
+        var lon='<?php echo $longitude?>';
+        // initialize map center on first point
+        var latlng = new google.maps.LatLng(lat[0],lon[0]);
+        var myOptions = {
+            zoom: 10,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
 
-        <?php for($i=0;$i<sizeof($locations);$i++)
-        { ?>
-         var marker = new google.maps.Marker({
-          map: map,
-          position: {lat: <?php echo $locations[$i]['lat']?>,lng: <?php echo $locations[$i]['lng']?>},
-          title: 'Service'
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        var bounds = new google.maps.LatLngBounds();
+
+        for (var i=0, i<lat.length; i++) {
+        var latlng = new google.maps.LatLng(lat[i],lon[i]);
+        bounds.extend(latlng);
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: "Hello World!"
         });
-        <?php } ?>
-       }
+        }
+        // zoom and center the map to show all the markers
+        map.fitBounds(bounds);
+        }
 </script>
