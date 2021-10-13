@@ -68,6 +68,7 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
 
+    
     // Query 2
     $sql1 = "SELECT * FROM house";
     $result1 = mysqli_query($conn, $sql1);
