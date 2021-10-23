@@ -62,7 +62,6 @@ if (isset($_POST['submit'])) {
             City LIKE '%$search%' OR 
             Sqft LIKE '%$search%' OR
             Address LIKE '%$search%' OR 
-            propertyType LIKE '%$search%' OR
             zipCode LIKE '%$search%'
             ";
     $result = mysqli_query($conn, $sql);
@@ -93,8 +92,6 @@ if (isset($_POST['submit'])) {
                 echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
                 echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
                 echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
-                echo "<p class='house__bathroom'>" . 'Address: ' . $row['Address'] . "</p>";
-                echo "<p class='house__bathroom'>" . 'Property Type: ' . $row['propertyType'] . "</p>";
             echo "</div>";
         }
         echo "</section>";
