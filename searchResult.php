@@ -82,7 +82,6 @@ if (isset($_POST['submit'])) {
         }
     }
     
-    
     // If the query result is not empty, list all items
     if ($resultCheck > 0) {
         echo "<section class='house__show hero__house' id='house-show'>";
