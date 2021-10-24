@@ -99,31 +99,8 @@ if (isset($_POST['submit'])) {
          echo "There are no results matching your search!";
     }
 }
-
 ?>
 
-
-<script>
-    function initMap() {
-        var myLatLng = {lat: 37.339108, lng: -121.861856};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: myLatLng,
-            scrollwheel: false,
-            zoom: 6
-        });
-
-        <?php for ($i=0; $i<sizeof($locations); $i++)
-        { ?>
-            var marker = new google.maps.Marker({
-                map: map,
-                position: {lat: <?php echo $locations[$i]['lat']?>,lng: <?php echo $locations[$i]['lng']?>},
-                title: 'Service'
-            });
-        <?php } ?>
-        
-    }
-</script>
 <script src="js/search.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA7IZt-36CgqSGDFK8pChUdQXFyKIhpMBY&sensor=true" type="text/javascript"></script>
 
