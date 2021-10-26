@@ -974,6 +974,27 @@ input {
   cursor: pointer;
 }
 
+.zipCode__expand {
+  -ms-flex-item-align: center;
+      align-self: center;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  z-index: var(--z-fixed);
+  margin-top: 10px;
+}
+
 .map__container {
   margin-top: 10%;
   -ms-flex-item-align: center;

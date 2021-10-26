@@ -50,8 +50,8 @@
     
     <?php if(isset($_SESSION["userid"]) || isset($_SESSION["useremail"])) { ?>
         <div class="zipCode__expand">
-            <input type="text" id="name"> 
-            <a href='javascript:setup()' id="import">Get Details</a>              
+            <input class="search__result__text" style="width: 50%;" type="text" id="name" placeholder="Enter a zip code..."> 
+            <a class="button" href='javascript:setup()' id="import">Get Details</a>              
         </div>
     <?php } else { ?>
         
