@@ -114,7 +114,7 @@ if (isset($_POST['submit'])) {
         const message = document.getElementById("name").value;
         // alert(`<a id="import" href="ms-excel:ofe|u|file:///C:/Users/kevin/OneDrive/Documents/excel/ACS Housing Summary, ${message}.xlsx">Open in Excel</a>`);
         // console.log(message);
-        document.getElementById("import").innerHTML = `<a id="import" href="ms-excel:ofe|u|file:///C:/Users/kevin/OneDrive/Documents/excel/ACS Housing Summary, ${message}.xlsx">Open in Excel</a>`;
+        document.getElementById("import").innerHTML = `<a id="import" href="ms-excel:ofe|u|file:///C:/xampp/htdocs/Project3/excel/HousingSummary/ACS Housing Summary, ${message}.xlsx">Open in Excel</a>`;
     }
 </script>
 <?php
