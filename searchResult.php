@@ -63,6 +63,7 @@
 
 </section>
 
+
 <section class="house__show hero__house" id="house-show">
 <?php
 if (isset($_POST['submit'])) {
