@@ -83,6 +83,7 @@ if (isset($_POST['submit'])) {
     $result1 = mysqli_query($conn, $sql1);
     $resultCheck1 = mysqli_num_rows($result1);
 
+    
     if ($resultCheck1 > 0) {
         while ($row1 = mysqli_fetch_assoc($result1)) {
             $latitude = $row1["Latitude"];
