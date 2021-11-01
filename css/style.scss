@@ -808,13 +808,24 @@ input {
     position: relative;
 }
 
+.house__show__2 {
+    z-index: var(--z-fixed);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
 .house__info {
+    position: relative;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
     border: 0.5px #121212 solid;
-    width: 100%;
+    width: 50%;
 }
 
 @media screen and (max-width: 767px) {

@@ -86,7 +86,7 @@
 </section>
 
 
-<section class="house__show hero__house" id="house-show">
+<!-- <section class="house__show hero__house" id="house-show"> -->
 <?php
 
 
@@ -103,38 +103,31 @@ if (isset($_POST['submit'])) {
                 ";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
-
-        // // Attempt to create a map with php
-        // // Query 2
-        // $sql1 = "SELECT * FROM house";
-        // $result1 = mysqli_query($conn, $sql1);
-        // $resultCheck1 = mysqli_num_rows($result1);
-        
-        // if ($resultCheck1 > 0) {
-        //     while ($row1 = mysqli_fetch_assoc($result1)) {
-        //         $latitude = $row1["Latitude"];
-        //         $longitude = $row1["Longitude"];
-        //         $locations[]=array ( 'lat'=>$latitude, 'lng'=>$longitude);
-        //     }
-        // }
         
         // If the query result is not empty, list all items
-        if ($resultCheck > 0) {
-            echo "<section class='house__show hero__house' id='house-show'>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='house__info'>";
-                    echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
-                    echo "<p class='house__sqft'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
-                    echo "<p class='house__price'>" . 'Price: $' . $row['Price'] . "</p>";
-                    echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
-                    echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
-                    echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
-                echo "</div>";
+        // Start of full container
+        echo "<section class='house__show hero__house' id='house-show'>";
+
+            // Left Side
+            if ($resultCheck > 0) {
+                // echo "<section class='house__show__2 hero__house'>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<div class='house__info'>";
+                        echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
+                        echo "<p class='house__sqft'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
+                        echo "<p class='house__price'>" . 'Price: $' . $row['Price'] . "</p>";
+                        echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
+                        echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
+                        echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
+                    echo "</div>";
+                }
+                // echo "</section>";
+
+            }  else {
+                echo "There are no results matching your search!";
             }
-            echo "</section>";
-        }  else {
-            echo "There are no results matching your search!";
-        }
+        // End
+        echo "</section>";
     }
 }
 
