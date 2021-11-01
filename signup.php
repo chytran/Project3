@@ -55,6 +55,22 @@
                     </div>
                 </div>
 
+                <div class="user__container input__design">
+                    <div class="input__extra__container">
+                        <div class="radio__container">
+                            <input type="radio" name="userType" value="Business" checked="checked">
+                        </div>
+
+                        <div class="radio__container">
+                            <input type="radio" name="userType" value="Realtor">
+                        </div>
+
+                        <div class="radio__container">
+                            <input type="radio" name="userType" value="Family">
+                        </div>  
+                    </div>
+                </div>
+
                 <button type="submit" name="submit" class="button">Submit</button>
                 <!-- <input type="submit" class="button"> -->
             </form>
