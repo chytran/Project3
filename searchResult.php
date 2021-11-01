@@ -48,6 +48,25 @@
         <input type="submit" class="button search__button" name="submit">
     </form>
     
+    <div class="user__container input__design">
+        <div class="input__extra__container">
+            <div class="radio__container" style="margin: 0.2rem;">
+                <label for="workAddress">Work Address</label>
+                <input type="radio" name="searchType" id="workAddress" value="Work Address" checked="checked">
+            </div>
+
+            <div class="radio__container" style="margin: 0.2rem;">
+                <label for="homeDetailed">Preferred Home Details</label>
+                <input type="radio" name="searchType" id="homeDetailed" value="Preferred Home Details">
+            </div>
+
+            <div class="radio__container" style="margin: 0.2rem;">
+                <label for="prefZipcode">Preferred Zipcode</label>
+                <input type="radio" name="searchType" id="prefZipcode" value="Preferred Zipcode">
+            </div>  
+        </div>
+    </div>
+
     <?php if(isset($_SESSION["userid"]) || isset($_SESSION["useremail"])) { ?>
         <div class="zipCode__expand">
             <input class="search__result__text" style="width: 50%;" type="text" id="name" placeholder="Enter a zip code..."> 
@@ -66,7 +85,10 @@
 
 <section class="house__show hero__house" id="house-show">
 <?php
-if (isset($_POST['submit'])) {
+
+$searchType = filter_input(INPUT_POST, 'searchType');
+
+if (isset($_POST['submit']) && $searchType == "Preferred Zipcode") {
     $search = mysqli_real_escape_string($conn, $_POST['search']); 
     $sql = "SELECT * FROM house WHERE 
             City LIKE '%$search%' OR 
@@ -77,19 +99,19 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
 
-    // Attempt to create a map with php
-    // Query 2
-    $sql1 = "SELECT * FROM house";
-    $result1 = mysqli_query($conn, $sql1);
-    $resultCheck1 = mysqli_num_rows($result1);
+    // // Attempt to create a map with php
+    // // Query 2
+    // $sql1 = "SELECT * FROM house";
+    // $result1 = mysqli_query($conn, $sql1);
+    // $resultCheck1 = mysqli_num_rows($result1);
     
-    if ($resultCheck1 > 0) {
-        while ($row1 = mysqli_fetch_assoc($result1)) {
-            $latitude = $row1["Latitude"];
-            $longitude = $row1["Longitude"];
-            $locations[]=array ( 'lat'=>$latitude, 'lng'=>$longitude);
-        }
-    }
+    // if ($resultCheck1 > 0) {
+    //     while ($row1 = mysqli_fetch_assoc($result1)) {
+    //         $latitude = $row1["Latitude"];
+    //         $longitude = $row1["Longitude"];
+    //         $locations[]=array ( 'lat'=>$latitude, 'lng'=>$longitude);
+    //     }
+    // }
     
     // If the query result is not empty, list all items
     if ($resultCheck > 0) {
@@ -109,6 +131,50 @@ if (isset($_POST['submit'])) {
          echo "There are no results matching your search!";
     }
 }
+
+if (isset($_POST['submit']) && $searchType == "Preferred Home Details") {
+    $search = mysqli_real_escape_string($conn, $_POST['search']); 
+    $sql = "SELECT * FROM house WHERE 
+            City LIKE '%$search%' OR 
+            Sqft LIKE '%$search%' OR
+            Address LIKE '%$search%' OR 
+            zipCode LIKE '%$search%'
+            ";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    // Attempt to create a map with php
+    // Query 2
+    $sql1 = "SELECT * FROM house2";
+    $result1 = mysqli_query($conn, $sql1);
+    $resultCheck1 = mysqli_num_rows($result1);
+    
+    if ($resultCheck1 > 0) {
+        while ($row1 = mysqli_fetch_assoc($result1)) {
+            $latitude = $row1["Latitude"];
+            $longitude = $row1["Longitude"];
+            $locations[]=array ( 'lat'=>$latitude, 'lng'=>$longitude);
+        }
+    }
+
+    // If the query result is not empty, list all items
+    if ($resultCheck > 0) {
+        echo "<section class='house__show hero__house' id='house-show'>";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<div class='house__info'>";
+                echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
+                echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
+                echo "<p class='house__price'>" . 'Price: $' . $row['Price'] . "</p>";
+                echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
+                echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
+            echo "</div>";
+        }
+        echo "</section>";
+    }  else {
+         echo "There are no results matching your search!";
+    }
+}
+
 ?>
 
 <script src="js/search.js"></script>
