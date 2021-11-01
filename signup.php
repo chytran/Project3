@@ -57,16 +57,19 @@
 
                 <div class="user__container input__design">
                     <div class="input__extra__container">
-                        <div class="radio__container">
-                            <input type="radio" name="userType" value="Business" checked="checked">
+                        <div class="radio__container" style="margin: 0.2rem;">
+                            <label for="business">Business</label>
+                            <input type="radio" name="userType" id="business" value="Business" checked="checked">
                         </div>
 
-                        <div class="radio__container">
-                            <input type="radio" name="userType" value="Realtor">
+                        <div class="radio__container" style="margin: 0.2rem;">
+                            <label for="realtor">Realtor</label>
+                            <input type="radio" name="userType" id="realtor" value="Realtor">
                         </div>
 
-                        <div class="radio__container">
-                            <input type="radio" name="userType" value="Family">
+                        <div class="radio__container" style="margin: 0.2rem;">
+                            <label for="family">Family</label>
+                            <input type="radio" name="userType" id="family" value="Family">
                         </div>  
                     </div>
                 </div>
