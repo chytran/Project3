@@ -119,13 +119,13 @@ if (isset($_POST['submit'])) {
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='house__info'>";
-                        echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
-                        echo "<p class='house__sqft'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
-                        echo "<p class='house__price'>" . 'Price: $' . $row['Price'] . "</p>";
-                        echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
-                        echo "<p class='house__bedroom'>" . $row['Bedroom'] . ' bedroom' . "</p>";
-                        echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
+                    echo "<div class='house__info' style='height: 204px;'>";
+                        echo "<p class='house__address' style='padding-left: 0.5rem; font-size: 1.3rem;'>" . 'Address: ' . $row['Address'] . "</p>";
+                        echo "<p class='house__sqft' style='padding-left: 0.5rem;'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
+                        echo "<p class='house__price' style='padding-left: 0.5rem;'>" . 'Price: $' . $row['Price'] . "</p>";
+                        echo "<p class='house__zipCode' style='padding-left: 0.5rem;'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
+                        echo "<p class='house__bedroom' style='padding-left: 0.5rem;'>" . $row['Bedroom'] . ' bedroom' . "</p>";
+                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . $row['Bathroom'] . ' bathroom' . "</p>";
                     echo "</div>";
                 }
                 echo "</section>";
@@ -138,7 +138,7 @@ if (isset($_POST['submit'])) {
             if ($resultCheck1 > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row1 = mysqli_fetch_assoc($result1)) {
-                    echo "<div class='house__info'>";
+                    echo "<div class='house__info' style='border: 2px solid #121212; padding: 0.5rem;'>";
                         echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
                         echo "<p class='house__address' style='padding-left: 1rem;'>" . 'Median Income: $' . $row1['medianIncome'] . "</p>";
                         echo "<p class='house__sqft' style='padding-left: 1rem;'>" . 'Bachelor: ' . $row1['bachelor'] . "</p>";
