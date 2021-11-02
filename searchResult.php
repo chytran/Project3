@@ -105,10 +105,7 @@ if (isset($_POST['submit'])) {
         $resultCheck = mysqli_num_rows($result);
         
         // Query 2
-        $sql1 = "SELECT * FROM house WHERE 
-                City LIKE '%$search%' OR 
-                Sqft LIKE '%$search%' OR
-                Address LIKE '%$search%' OR 
+        $sql1 = "SELECT * FROM house2 WHERE 
                 zipCode LIKE '%$search%'
                 ";
         $result1 = mysqli_query($conn, $sql1);
@@ -137,23 +134,24 @@ if (isset($_POST['submit'])) {
                 echo "There are no results matching your search!";
             }
 
-            // Left Side
+            // Right Side
             if ($resultCheck1 > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row1 = mysqli_fetch_assoc($result1)) {
                     echo "<div class='house__info'>";
-                        echo "<p class='house__address'>" . 'Address: ' . $row1['Address'] . "</p>";
-                        echo "<p class='house__sqft'>" . 'Sqft: ' . $row1['Sqft'] . ' sqft' . "</p>";
-                        echo "<p class='house__price'>" . 'Price: $' . $row1['Price'] . "</p>";
-                        echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
-                        echo "<p class='house__bedroom'>" . $row1['Bedroom'] . ' bedroom' . "</p>";
-                        echo "<p class='house__bathroom'>" . $row1['Bathroom'] . ' bathroom' . "</p>";
+                        echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
+                        echo "<p class='house__address' style='padding-left: 1rem;'>" . 'Median Income: $' . $row1['medianIncome'] . "</p>";
+                        echo "<p class='house__sqft' style='padding-left: 1rem;'>" . 'Bachelor: ' . $row1['bachelor'] . "</p>";
+                        echo "<p class='house__price' style='padding-left: 1rem;'>" . 'Masters: ' . $row1['gradSchool'] . "</p>";
+                        echo "<p class='house__zipCode' style='padding-left: 1rem;'>" . 'High School: ' . $row1['highSchool'] . "</p>";
+                        echo "<p class='house__bedroom' style='padding-left: 1rem;'>" . 'Internet Access: ' . $row1['internetAccess'] . "</p>";
+                        echo "<p class='house__bathroom' style='padding-left: 1rem;'>" . 'Crimes: ' . $row1['crime'] . ' bathroom' . "</p>";
                     echo "</div>";
                 }
                 echo "</section>";
 
             }  else {
-                echo "There are no results matching your search!";
+                echo "Only displays info from zip code searches";
             }
         // End
         echo "</section>";
