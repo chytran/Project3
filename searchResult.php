@@ -111,6 +111,16 @@ if (isset($_POST['submit'])) {
         $result1 = mysqli_query($conn, $sql1);
         $resultCheck1 = mysqli_num_rows($result1);
 
+        // Query 3
+        $sql2 = "SELECT Price FROM house WHERE 
+                zipCode LIKE '%$search%'
+                order by Price desc
+                limit 1
+                ";
+        $result2 = mysqli_query($conn, $sql2);
+        $resultCheck2 = mysqli_num_rows($result2);
+
+
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
@@ -140,12 +150,15 @@ if (isset($_POST['submit'])) {
                 while ($row1 = mysqli_fetch_assoc($result1)) {
                     echo "<div class='house__info' style='border: 2px solid #121212; padding: 0.5rem;'>";
                         echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
-                        echo "<p class='house__address' style='padding-left: 1rem;'>" . 'Median Income: $' . $row1['medianIncome'] . "</p>";
-                        echo "<p class='house__sqft' style='padding-left: 1rem;'>" . 'Bachelor: ' . $row1['bachelor'] . "</p>";
-                        echo "<p class='house__price' style='padding-left: 1rem;'>" . 'Masters: ' . $row1['gradSchool'] . "</p>";
-                        echo "<p class='house__zipCode' style='padding-left: 1rem;'>" . 'High School: ' . $row1['highSchool'] . "</p>";
-                        echo "<p class='house__bedroom' style='padding-left: 1rem;'>" . 'Internet Access: ' . $row1['internetAccess'] . "</p>";
-                        echo "<p class='house__bathroom' style='padding-left: 1rem;'>" . 'Crimes: ' . $row1['crime'] . ' bathroom' . "</p>";
+                        while ($row2 = mysqli_fetch_assoc($result2)) {
+                            echo "<p class='house__price' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Highest Priced House: $' . $row2['Price'] . "</p>";
+                        }
+                        echo "<p class='house__address' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Median Income: $' . $row1['medianIncome'] . "</p>";
+                        echo "<p class='house__sqft' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Bachelor Degrees: ' . $row1['bachelor'] . ' degrees' . "</p>";
+                        echo "<p class='house__price' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Master Degrees: ' . $row1['gradSchool'] . ' degrees' . "</p>";
+                        echo "<p class='house__zipCode' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'High School Degrees: ' . $row1['highSchool'] . ' degrees' . "</p>";
+                        echo "<p class='house__bedroom' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Internet Access: ' . $row1['internetAccess'] . "</p>";
+                        echo "<p class='house__bathroom' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Crimes: ' . $row1['crime'] . "</p>";
                     echo "</div>";
                 }
                 echo "</section>";
