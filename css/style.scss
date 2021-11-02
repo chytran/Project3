@@ -756,6 +756,16 @@ input {
     flex-direction: column;
 }
 
+.hero__house__2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
 .search__img {
     position: absolute;
     top: 0;
@@ -806,6 +816,7 @@ input {
 .house__show {
     z-index: var(--z-fixed);
     position: relative;
+    
 }
 
 .house__show__2 {
@@ -815,7 +826,7 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
 }
 
 .house__info {
@@ -825,7 +836,7 @@ input {
     align-content: center;
     flex-direction: column;
     border: 0.5px #121212 solid;
-    width: 50%;
+    width: 100%;
 }
 
 @media screen and (max-width: 767px) {

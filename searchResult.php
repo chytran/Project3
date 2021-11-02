@@ -79,9 +79,9 @@
         
     <?php } ?>
     
-    <div id="map" class="map__container" style="height: 400px; width: 350px; position: relative; z-index: 100;">
+    <!-- <div id="map" class="map__container" style="height: 400px; width: 350px; position: relative; z-index: 100;"> -->
         <!-- <iframe style="position: relative; z-index: 100;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.370930560317!2d-121.89211318474916!3d37.3337261798421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fccbb4e751f57%3A0x7bb970c4219e6acd!2sSan%20Jos%C3%A9%20Museum%20of%20Art!5e0!3m2!1sen!2sus!4v1632683176648!5m2!1sen!2sus" width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
-    </div>
+    <!-- </div> -->
 
 </section>
 
@@ -104,13 +104,23 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         
+        // Query 2
+        $sql1 = "SELECT * FROM house WHERE 
+                City LIKE '%$search%' OR 
+                Sqft LIKE '%$search%' OR
+                Address LIKE '%$search%' OR 
+                zipCode LIKE '%$search%'
+                ";
+        $result1 = mysqli_query($conn, $sql1);
+        $resultCheck1 = mysqli_num_rows($result1);
+
         // If the query result is not empty, list all items
         // Start of full container
-        echo "<section class='house__show hero__house' id='house-show'>";
+        echo "<section class='house__show hero__house__2' id='house-show'>";
 
             // Left Side
             if ($resultCheck > 0) {
-                // echo "<section class='house__show__2 hero__house'>";
+                echo "<section class='house__show__2'>";
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<div class='house__info'>";
                         echo "<p class='house__address'>" . 'Address: ' . $row['Address'] . "</p>";
@@ -121,7 +131,26 @@ if (isset($_POST['submit'])) {
                         echo "<p class='house__bathroom'>" . $row['Bathroom'] . ' bathroom' . "</p>";
                     echo "</div>";
                 }
-                // echo "</section>";
+                echo "</section>";
+
+            }  else {
+                echo "There are no results matching your search!";
+            }
+
+            // Left Side
+            if ($resultCheck1 > 0) {
+                echo "<section class='house__show__2'>";
+                while ($row1 = mysqli_fetch_assoc($result1)) {
+                    echo "<div class='house__info'>";
+                        echo "<p class='house__address'>" . 'Address: ' . $row1['Address'] . "</p>";
+                        echo "<p class='house__sqft'>" . 'Sqft: ' . $row1['Sqft'] . ' sqft' . "</p>";
+                        echo "<p class='house__price'>" . 'Price: $' . $row1['Price'] . "</p>";
+                        echo "<p class='house__zipCode'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
+                        echo "<p class='house__bedroom'>" . $row1['Bedroom'] . ' bedroom' . "</p>";
+                        echo "<p class='house__bathroom'>" . $row1['Bathroom'] . ' bathroom' . "</p>";
+                    echo "</div>";
+                }
+                echo "</section>";
 
             }  else {
                 echo "There are no results matching your search!";
