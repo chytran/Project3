@@ -79,6 +79,8 @@
         
     <?php } ?>
     
+
+    
     <div id="map" class="map__container" style="height: 400px; width: 350px; position: relative; z-index: 100;"> -->
     <iframe src="/foliumhtml.html" title="test map" style="border:none;width:600px;height:600px;"></iframe>
     </div>
