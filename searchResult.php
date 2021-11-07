@@ -80,9 +80,8 @@
     <?php } ?>
     
 
-    
-    <div id="map" class="map__container" style="height: 400px; width: 350px; position: relative; z-index: 100;"> -->
-    <iframe src="/foliumhtml.html" title="test map" style="border:none;width:600px;height:600px;"></iframe>
+    <div id="map" class="map__container" style="height: 300px; width: 350px; position: relative; z-index: 100; align-self: center;"> 
+        <iframe src="foliumhtml.html" title="test map" style="border:none;width:500px;height:450px;align-self:center; margin-top:-30%; margin-left: -21%;"></iframe>
     </div>
 
 </section>
