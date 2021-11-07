@@ -81,7 +81,7 @@
     
 
     <div id="map" class="map__container" style="height: 300px; width: 350px; position: relative; z-index: 100; align-self: center;"> 
-        <iframe src="foliumhtml.html" title="test map" style="border:none;width:500px;height:450px;align-self:center; margin-top:-30%; margin-left: -21%;"></iframe>
+        <iframe src="mapcode/foliumhtml.html" title="test map" style="border:none;width:500px;height:450px;align-self:center; margin-top:-30%; margin-left: -21%;"></iframe>
     </div>
 
 </section>

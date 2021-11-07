@@ -19,4 +19,4 @@ ne = df[['latitude', 'longitude']].max().values.tolist()
 map.fit_bounds([sw, ne])
 
 map
-map.save(r"C:\xampp\htdocs\Project3\foliumhtml.html")
+map.save(r"C:\xampp\htdocs\Project3\mapcode\foliumhtml.html")
