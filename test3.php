@@ -28,10 +28,15 @@ if (($handle = fopen("mapcode/zillowdata.csv", 'r')) !== false) {
     echo "</table>";
 }
 
-header('Content-Encoding: UTF-8');
-header('Content-type: text/csv; charset=UTF-8');
-header('Content-Disposition: attachment; filename=coordinates.csv');
-echo "\xEF\xBB\xBF"; // UTF-8 BOM
+// xls
+header("Content-type: application/vnd.ms-excel");
+header("Content-Disposition: attachment; filename=coordinates.xls");
+
+// csv
+// header('Content-Encoding: UTF-8');
+// header('Content-type: text/csv; charset=UTF-8');
+// header('Content-Disposition: attachment; filename=coordinates.csv');
+// echo "\xEF\xBB\xBF"; // UTF-8 BOM
 
 // // Conversion from xls to csv excel
 // require_once "PHPExcel-1.8/Classes/PHPExcel/IOFactory.php";

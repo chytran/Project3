@@ -4,7 +4,7 @@ import pandas as pd
 # import matplotlib.pyplot as plt
 # import seaborn as sns
 
-df = pd.read_csv('mapcode/coordinates.csv')
+df = pd.read_xls('mapcode/coordinates.xls')
 df.head()
 
 map = folium.Map([35.72,-119.91], tiles="OpenStreetMap", zoom_start=1, control_scale= True)
