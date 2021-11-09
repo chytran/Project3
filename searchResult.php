@@ -66,6 +66,14 @@
             <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, zipcode, property type or sqft...">
             <input type="submit" class="button search__button" name="submit">
         </div>
+        <div class="user__container input__design" style="z-index:100; align-self: center; width: 100%;">
+            <div class="input__extra__container">
+                <div class="radio__container" style="margin: 0.2rem;">
+                    <label for="crime">Crime Rate</label>
+                    <input type="radio" name="crime" id="workAddress" value="crime" checked="checked">
+                </div> 
+            </div>
+        </div>
     </form>
     
     
