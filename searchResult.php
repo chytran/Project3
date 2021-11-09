@@ -105,9 +105,9 @@ if (isset($_POST['submit'])) {
 
     if ($searchType == "Filtered Search" && $filter == "crime") {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
-        $sql = "SELECT * FROM house AND
-                house2.crime FROM house2
-                LEFT JOIN house2 on house.zipCode = house2.zipCode
+        $sql = "SELECT *
+                FROM house  
+                LEFT JOIN house2 ON house.zipCode = house2.zipCode
                 WHERE 
                 house.City LIKE '%$search%' OR 
                 house.Sqft LIKE '%$search%' OR
@@ -183,6 +183,9 @@ if (isset($_POST['submit'])) {
             }
         // End
         echo "</section>";
+    }
+    else if {
+        
     }
 
     //================= Preferred Searched =======================//
