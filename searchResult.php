@@ -63,11 +63,12 @@
             </div>
         </div>
         <div class="form__container__main" style="display: flex; justify-content: center; align-content: center; flex-direction: row;">
-            <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, zipcode, property type or sqft...">
+            <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, zipcode, or sqft...">
             <input type="submit" class="button search__button" name="submit">
         </div>
         <div class="user__container input__design" style="z-index:100; align-self: center; width: 100%;">
             <div class="input__extra__container">
+                <p style="text-decoration: underline;">Filters</p>
                 <div class="radio__container" style="margin: 0.2rem;">
                     <label for="crime">Crime Rate</label>
                     <input type="radio" name="filter" id="workAddress" value="crime">
@@ -184,8 +185,8 @@ if (isset($_POST['submit'])) {
         // End
         echo "</section>";
     }
-    else if {
-        
+    else if ($searchType == "Filtered Search"){
+        echo '<script>alert("Must click a filter preference on Filtered Search")</script>';
     }
 
     //================= Preferred Searched =======================//
