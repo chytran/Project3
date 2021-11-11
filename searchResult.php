@@ -159,7 +159,7 @@ if (isset($_POST['submit'])) {
                         echo "<p class='house__zipCode' style='padding-left: 0.5rem;'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
                         echo "<p class='house__bedroom' style='padding-left: 0.5rem;'>" . $row['Bedroom'] . ' bedroom' . "</p>";
                         echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . $row['Bathroom'] . ' bathroom' . "</p>";               
-                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate in zip code " . "(" . $row[zipCode] . ")" . ": " . $row['crime'] . "</p>"; 
+                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate at zip code" . "(" . $row['zipCode'] . ")" . ": " . $row['crime'] . "</p>"; 
                     echo "</div>";
                 }
                 echo "</section>";
@@ -193,7 +193,6 @@ if (isset($_POST['submit'])) {
         // End
         echo "</section>";
     }
-
     if ($searchType == "Filtered Search" && $filter == "medianIncome") {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
         $sql = "SELECT *
@@ -241,7 +240,7 @@ if (isset($_POST['submit'])) {
                         echo "<p class='house__zipCode' style='padding-left: 0.5rem;'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
                         echo "<p class='house__bedroom' style='padding-left: 0.5rem;'>" . $row['Bedroom'] . ' bedroom' . "</p>";
                         echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . $row['Bathroom'] . ' bathroom' . "</p>";               
-                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate in zip code " . "(" . $row['zipCode'] . ")" . ": " . $row['crime'] . "</p>"; 
+                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate at zip code " . "(" . $row['zipCode'] . ")" . ": " . $row['crime'] . "</p>"; 
                     echo "</div>";
                 }
                 echo "</section>";
@@ -322,7 +321,7 @@ if (isset($_POST['submit'])) {
                         echo "<p class='house__zipCode' style='padding-left: 0.5rem;'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
                         echo "<p class='house__bedroom' style='padding-left: 0.5rem;'>" . $row['Bedroom'] . ' bedroom' . "</p>";
                         echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . $row['Bathroom'] . ' bathroom' . "</p>";               
-                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate in zip code " . "(" . $row[zipCode] . ")" . ": " . $row['crime'] . "</p>"; 
+                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate at zip code" . "(" . $row['zipCode'] . ")" . ": " . $row['crime'] . "</p>"; 
                     echo "</div>";
                 }
                 echo "</section>";
@@ -357,7 +356,7 @@ if (isset($_POST['submit'])) {
         echo "</section>";
     }
     else if ($searchType == "Filtered Search"){
-        echo '<script>alert("Must click a filter preference on Filtered Search")</script>';
+        // echo '<script>alert("Must click a filter preference on Filtered Search")</script>';
     }
 
     //================= Preferred Searched =======================//
