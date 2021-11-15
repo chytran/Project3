@@ -1,16 +1,16 @@
 INSTALLION TUTORIAL:
 
 0. Download zip from github. To download, click on the green button named "Code" and press download ZIP.
-0.5 After downloading, extract the folder and change the name from Project3-Master to Project3
+0.5. After downloading, extract the folder and change the name from Project3-Master to Project3
 
-1. Download XAMPP
-1.5. Put the folder in the xampp/htdocs/
+1. Download XAMPP (PC/Windows recommended)
+1.5. Put the extracted folder into the xampp/htdocs/
 
 In a code editor: 
 2. Edit the $servername in includes/database.inc.php to match the localhost route.
 
 On a preferred browser
 3. Go to localhost:(your localhost number)/phpmyadmin 
-4. Import the necessary sql file into phpmyadmin from the project folder "project3/sql/home.sql"
+4. Import the necessary sql file into phpmyadmin from the project folder "project3/sql/home.sql.zip" in order to import the database.
 
 5. Open the application by going to localhost:(your localhost set up)/Project3/index.php (Capitalize sensitive)
