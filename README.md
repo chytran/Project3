@@ -1,3 +1,5 @@
 # Project3
 
 An application that is developed to meet our client's needs. The main objective of this project is to create a web-application to allow search and filter in the home/apartment listings pool based on the neighborhood and remote work preferences that a user fill in. Many websites and mobile applications such as Zillow or Redfin that provide dwelling search usually focus on specific locations and their filtering tools is designed for the ideal home/apartment. People who want to work remotely, may have different needs compared to regular home buyers. One main difference is access to high internet speed and home office space. At the same time, they still need access to school and healthcare facilities. The result will be a ranked list of places that match the user criteria. For example, if someone is looking to live in a neighborhood with median income between 75-100k with at least walkability score 7, and 50-mile proximity to the job address, the website allows for such specific search. Users enter their preferences and their job address, and the result will be displayed to them on a map and as a list.
+
+
