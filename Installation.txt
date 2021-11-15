@@ -4,8 +4,8 @@ INSTALLION TUTORIAL:
 
 In a code editor: 
 2. Edit the $servername in includes/database.inc.php to match the localhost route.
-3. Import the necessary sql file from the project folder "project3/sql/home.sql"
 
 On a preferred browser
-4. Go to localhost:(your localhost number)/phpmyadmin 
+3. Go to localhost:(your localhost number)/phpmyadmin 
+4. Import the necessary sql file from the project folder "project3/sql/home.sql"
 5. Open the application by going to localhost:(your localhost set up)/project3/index.php
