@@ -84,6 +84,7 @@
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="bathroom">Bathroom</label>
                         <input type="radio" name="filter" id="bathroom" value="bathroom">
+                        <input type="text" name="bathroom" id="bathroom">
                     </div> 
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="bedroom">Bedroom</label>
@@ -120,6 +121,7 @@
 if (isset($_POST['submit'])) {
     $searchType = filter_input(INPUT_POST, 'searchType');
     $filter = filter_input(INPUT_POST, 'filter');
+    $bathroomFilter = filter_input(INPUT_POST, 'bathroom');
 
     if ($filter == "crime") {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
@@ -364,9 +366,10 @@ if (isset($_POST['submit'])) {
         // End
         echo "</section>";
     }
-    if ($filter == "bathroom") {
+    if ($filter == "bathroom" && $bathroomFilter = ) {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
-        
+        $bathroomSearch = mysqli_real_escape_string($conn, $_POST['bathroom']); 
+
         $sql = "SELECT *
                 FROM house  
                 LEFT JOIN house2 ON house.zipCode = house2.zipCode
@@ -374,8 +377,9 @@ if (isset($_POST['submit'])) {
                 house.City LIKE '%$search%' OR 
                 house.Sqft LIKE '%$search%' OR
                 house.Address LIKE '%$search%' OR 
-                house2.zipCode LIKE '%$search%'
-                ORDER BY house.bathroom
+                house2.zipCode LIKE '%$search%' AND
+                house.bathroom = '%$bathroomSearch%'
+                -- ORDER BY house.bathroom
                 ";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
