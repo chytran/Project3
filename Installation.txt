@@ -7,5 +7,5 @@ In a code editor:
 
 On a preferred browser
 3. Go to localhost:(your localhost number)/phpmyadmin 
-4. Import the necessary sql file into phpmyadmin from the project folder "project3/sql/home.sql"
+4. Import the necessary sql file into phpmyadmin from the project folder "project3-master/sql/home.sql"
 5. Open the application by going to localhost:(your localhost set up)/project3/index.php
