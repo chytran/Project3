@@ -1,7 +1,7 @@
 INSTALLION TUTORIAL:
 
 0. Download zip from github. To download, click on the green button named "Code" and press download ZIP.
-0.5 After downloading, change the name from Project3-Master to Project3
+0.5 After downloading, extract the folder and change the name from Project3-Master to Project3
 
 1. Download XAMPP
 1.5. Put the folder in the xampp/htdocs/
