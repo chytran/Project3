@@ -377,8 +377,7 @@ if (isset($_POST['submit'])) {
                 house.City LIKE '%$search%' OR 
                 house.Sqft LIKE '%$search%' OR
                 house.Address LIKE '%$search%' OR 
-                house2.zipCode LIKE '%$search%' AND
-                
+                house2.zipCode LIKE '%$search%'
                 ORDER BY house.bathroom
                 ";
         $result = mysqli_query($conn, $sql);
