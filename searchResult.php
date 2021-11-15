@@ -366,7 +366,7 @@ if (isset($_POST['submit'])) {
         // End
         echo "</section>";
     }
-    if ($filter == "bathroom" && $bathroomFilter = ) {
+    if ($filter == "bathroom") {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
         $bathroomSearch = mysqli_real_escape_string($conn, $_POST['bathroom']); 
 
@@ -378,8 +378,8 @@ if (isset($_POST['submit'])) {
                 house.Sqft LIKE '%$search%' OR
                 house.Address LIKE '%$search%' OR 
                 house2.zipCode LIKE '%$search%' AND
-                house.bathroom = '%$bathroomSearch%'
-                -- ORDER BY house.bathroom
+                
+                ORDER BY house.bathroom
                 ";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
