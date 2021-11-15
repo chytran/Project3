@@ -547,6 +547,7 @@ input {
     padding: 1rem;
     position: relative;
     z-index: 99;
+    flex-direction: row;
 }
 
 .search__result__text {
@@ -754,6 +755,7 @@ input {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    
 }
 
 .hero__house__2 {
@@ -785,6 +787,7 @@ input {
     flex-direction: row;
     z-index: var(--z-fixed);
     margin-top: 10%;
+    width: 100vw;
 
     .button {
         cursor: pointer;
