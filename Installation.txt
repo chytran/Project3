@@ -1,6 +1,8 @@
 INSTALLION TUTORIAL:
 
 1. Download XAMPP
-2. Edit the $servername in project3/includes/database.inc.php to match the localhost route.
+
+In a code editor: 
+2. Edit the $servername in includes/database.inc.php to match the localhost route.
 3. Go to phpmyadmin and import the necessary sql file from project3/sql/home.sql
 4. Open the application by going to localhost:(your localhost set up)/project3/index.php
