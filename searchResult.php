@@ -158,12 +158,12 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
-
+            echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='house__info' style='height: 204px; background-color: #FEFEFA; margin-top: 0.5rem; margin-bottom: 0.5rem; border-bottom: 0.5px #F8F8F8 solid;'>";
+                    echo "<div class='house__info' style='width: 95%; height: 204px; background-color: #FEFEFA; margin-top: 0.5rem; margin-bottom: 0.3rem; border-bottom: 0.5px #F8F8F8 solid;'>";
                         echo "<p class='house__address' style='padding-left: 0.5rem; font-size: 1.3rem;'>" . 'Address: ' . $row['Address'] . "</p>";
                         echo "<p class='house__sqft' style='padding-left: 0.5rem;'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
                         echo "<p class='house__price' style='padding-left: 0.5rem;'>" . 'Price: $' . $row['Price'] . "</p>";
@@ -186,7 +186,7 @@ if (isset($_POST['submit'])) {
             if ($resultCheck1 > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row1 = mysqli_fetch_assoc($result1)) {
-                    echo "<div class='house__info' style='border: 2px solid #121212; padding: 0.5rem;'>";
+                    echo "<div class='house__info' style='margin-left: 0.5rem; width: 95%; margin-top: 0.5rem; border: 0.5px solid #121212; background-color: #FEFEFA; color: #121212; padding: 0.5rem;'>";
                         echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
                         while ($row2 = mysqli_fetch_assoc($result2)) {
                             echo "<p class='house__price' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Highest Priced House: $' . $row2['Price'] . "</p>";
@@ -242,12 +242,12 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
-
+        echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='house__info' style='height: 204px;'>";
+                    echo "<div class='house__info' style='width: 95%; height: 204px; background-color: #FEFEFA; margin-top: 0.5rem; margin-bottom: 0.3rem; border-bottom: 0.5px #F8F8F8 solid;'>";
                         echo "<p class='house__address' style='padding-left: 0.5rem; font-size: 1.3rem;'>" . 'Address: ' . $row['Address'] . "</p>";
                         echo "<p class='house__sqft' style='padding-left: 0.5rem;'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
                         echo "<p class='house__price' style='padding-left: 0.5rem;'>" . 'Price: $' . $row['Price'] . "</p>";
@@ -267,7 +267,7 @@ if (isset($_POST['submit'])) {
             if ($resultCheck1 > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row1 = mysqli_fetch_assoc($result1)) {
-                    echo "<div class='house__info' style='border: 2px solid #121212; padding: 0.5rem;'>";
+                    echo "<div class='house__info' style='margin-left: 0.5rem; width: 95%; margin-top: 0.5rem; border: 0.5px solid #121212; background-color: #FEFEFA; color: #121212; padding: 0.5rem;'>";
                         echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
                         while ($row2 = mysqli_fetch_assoc($result2)) {
                             echo "<p class='house__price' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Highest Priced House: $' . $row2['Price'] . "</p>";
@@ -323,12 +323,12 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
-
+        echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='house__info' style='height: 204px;'>";
+                    echo "<div class='house__info' style='width: 95%; height: 204px; background-color: #FEFEFA; margin-top: 0.5rem; margin-bottom: 0.3rem; border-bottom: 0.5px #F8F8F8 solid;'>";
                         echo "<p class='house__address' style='padding-left: 0.5rem; font-size: 1.3rem;'>" . 'Address: ' . $row['Address'] . "</p>";
                         echo "<p class='house__sqft' style='padding-left: 0.5rem;'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
                         echo "<p class='house__price' style='padding-left: 0.5rem;'>" . 'Price: $' . $row['Price'] . "</p>";
@@ -348,7 +348,7 @@ if (isset($_POST['submit'])) {
             if ($resultCheck1 > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row1 = mysqli_fetch_assoc($result1)) {
-                    echo "<div class='house__info' style='border: 2px solid #121212; padding: 0.5rem;'>";
+                    echo "<div class='house__info' style='margin-left: 0.5rem; width: 95%; margin-top: 0.5rem; border: 0.5px solid #121212; background-color: #FEFEFA; color: #121212; padding: 0.5rem;'>";
                         echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
                         while ($row2 = mysqli_fetch_assoc($result2)) {
                             echo "<p class='house__price' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Highest Priced House: $' . $row2['Price'] . "</p>";
@@ -406,12 +406,12 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
-
+        echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='house__info' style='height: 204px;'>";
+                    echo "<div class='house__info' style='width: 95%; height: 204px; background-color: #FEFEFA; margin-top: 0.5rem; margin-bottom: 0.3rem; border-bottom: 0.5px #F8F8F8 solid;'>";
                         echo "<p class='house__address' style='padding-left: 0.5rem; font-size: 1.3rem;'>" . 'Address: ' . $row['Address'] . "</p>";
                         echo "<p class='house__sqft' style='padding-left: 0.5rem;'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
                         echo "<p class='house__price' style='padding-left: 0.5rem;'>" . 'Price: $' . $row['Price'] . "</p>";
@@ -431,7 +431,7 @@ if (isset($_POST['submit'])) {
             if ($resultCheck1 > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row1 = mysqli_fetch_assoc($result1)) {
-                    echo "<div class='house__info' style='border: 2px solid #121212; padding: 0.5rem;'>";
+                    echo "<div class='house__info' style='margin-left: 0.5rem; width: 95%; margin-top: 0.5rem; border: 0.5px solid #121212; background-color: #FEFEFA; color: #121212; padding: 0.5rem;'>";
                         echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
                         while ($row2 = mysqli_fetch_assoc($result2)) {
                             echo "<p class='house__price' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Highest Priced House: $' . $row2['Price'] . "</p>";
@@ -488,12 +488,12 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
-
+        echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='house__info' style='height: 204px;'>";
+                    echo "<div class='house__info' style='width: 95%; height: 204px; background-color: #FEFEFA; margin-top: 0.5rem; margin-bottom: 0.3rem; border-bottom: 0.5px #F8F8F8 solid;'>";
                         echo "<p class='house__address' style='padding-left: 0.5rem; font-size: 1.3rem;'>" . 'Address: ' . $row['Address'] . "</p>";
                         echo "<p class='house__sqft' style='padding-left: 0.5rem;'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
                         echo "<p class='house__price' style='padding-left: 0.5rem;'>" . 'Price: $' . $row['Price'] . "</p>";
@@ -513,7 +513,7 @@ if (isset($_POST['submit'])) {
             if ($resultCheck1 > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row1 = mysqli_fetch_assoc($result1)) {
-                    echo "<div class='house__info' style='border: 2px solid #121212; padding: 0.5rem;'>";
+                    echo "<div class='house__info' style='margin-left: 0.5rem; width: 95%; margin-top: 0.5rem; border: 0.5px solid #121212; background-color: #FEFEFA; color: #121212; padding: 0.5rem;'>";
                         echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
                         while ($row2 = mysqli_fetch_assoc($result2)) {
                             echo "<p class='house__price' style='padding-left: 1rem; font-size: 1.3rem;'>" . 'Highest Priced House: $' . $row2['Price'] . "</p>";
