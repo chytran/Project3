@@ -84,7 +84,7 @@
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="bathroom">Bathroom</label>
                         <input type="radio" name="filter" id="bathroom" value="bathroom">
-                        <input type="text" name="bathroom" id="bathroom">
+                        <!-- <input type="text" name="bathroom" id="bathroom"> -->
                     </div> 
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="bedroom">Bedroom</label>
@@ -174,6 +174,9 @@ if (isset($_POST['submit'])) {
                     echo "</div>";
                 }
                 echo "</section>";
+
+                // $csvfile = fopen('/mapcode/result.csv', 'w');
+                // fputcsv($csvfile, $row);
 
             }  else {
                 echo "There are no results matching your search!";
