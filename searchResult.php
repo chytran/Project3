@@ -42,7 +42,7 @@
 <!--================ BODY =======================-->
 <section class="search__result hero__house" style="background-color: black;">
     <img src="image/resultpage.jpg" alt="" class="search__img">
-    <div class="search__containing" style="margin-top: 4%; align-self: center; display: flex; justify-content: center; align-content: center; position: relative; flex-direction: column;">
+    <div class="search__containing" style="align-self: center; display: flex; justify-content: center; align-content: center; position: relative; flex-direction: column;">
         <form action="searchResult.php" method="post" class="search__form" style="flex-direction: column;">
             <!-- <div class="user__container input__design" style="z-index:100; align-self: center; width: 100%;">
                 <div class="input__extra__container">
@@ -66,8 +66,8 @@
                 <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, zipcode, or sqft...">
                 <input type="submit" class="button search__button" name="submit">
             </div>
-            <div class="user__container input__design" style="z-index:100; align-self: center; width: 100%;">
-                <div class="input__extra__container">
+            <div class="user__container input__design" style="z-index:100; align-self: center; width: 40%;">
+                <div class="input__extra__container" >
                     <p style="text-decoration: underline; padding-right: 1rem;">Filters:</p>
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="crime">Crime Rate</label>
@@ -108,7 +108,7 @@
     </div>
     
     <div id="map" class="map__container" style="height: 300px; width: 350px; position: relative; z-index: 100; align-self: center;"> 
-        <iframe src="mapcode/foliumhtml.html" title="test map" style="border:none;width:500px;height:450px;align-self:center; margin-top:-30%; margin-left: -21%;"></iframe>
+        <iframe src="mapcode/foliumhtml.html" title="test map" style="border:none;width:500px;height:450px;align-self:center; margin-top:-35%; margin-left: -21%;"></iframe>
     </div>
 
 </section>
@@ -163,7 +163,7 @@ if (isset($_POST['submit'])) {
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='house__info' style='height: 204px;'>";
+                    echo "<div class='house__info' style='height: 204px; background-color: #FEFEFA; margin-top: 0.5rem; margin-bottom: 0.5rem; border-bottom: 0.5px #F8F8F8 solid;'>";
                         echo "<p class='house__address' style='padding-left: 0.5rem; font-size: 1.3rem;'>" . 'Address: ' . $row['Address'] . "</p>";
                         echo "<p class='house__sqft' style='padding-left: 0.5rem;'>" . 'Sqft: ' . $row['Sqft'] . ' sqft' . "</p>";
                         echo "<p class='house__price' style='padding-left: 0.5rem;'>" . 'Price: $' . $row['Price'] . "</p>";
@@ -371,7 +371,7 @@ if (isset($_POST['submit'])) {
     }
     if ($filter == "bathroom") {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
-        $bathroomSearch = mysqli_real_escape_string($conn, $_POST['bathroom']); 
+        // $bathroomSearch = mysqli_real_escape_string($conn, $_POST['bathroom']); 
 
         $sql = "SELECT *
                 FROM house  

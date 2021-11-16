@@ -598,6 +598,10 @@ input {
   padding: 1rem;
   position: relative;
   z-index: 99;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .search__result__text {
@@ -968,6 +972,23 @@ input {
   z-index: var(--z-tooltip);
 }
 
+.search__containing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
 .search__form {
   -ms-flex-item-align: center;
       align-self: center;
@@ -987,6 +1008,7 @@ input {
           flex-direction: row;
   z-index: var(--z-fixed);
   margin-top: 10%;
+  width: 100vw;
 }
 
 .search__form .button {
