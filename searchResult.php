@@ -490,6 +490,8 @@ if (isset($_POST['submit'])) {
         echo "<section class='house__show hero__house__2' id='house-show'>";
         echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
 
+
+        
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
