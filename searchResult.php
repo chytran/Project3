@@ -507,7 +507,6 @@ if (isset($_POST['submit'])) {
                     echo "</div>";
                 }
                 echo "</section>";
-
             }  else {
                 echo "There are no results matching your search!";
             }
