@@ -63,7 +63,7 @@
                 </div>
             </div> -->
             <div class="form__container__main" style="display: flex; justify-content: center; align-content: center; flex-direction: row;">
-                <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, zipcode, or sqft...">
+                <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, or zipcode...">
                 <input type="submit" class="button search__button" name="submit">
             </div>
             <div class="user__container input__design" style="z-index:100; align-self: center; width: 40%;">
@@ -455,18 +455,19 @@ if (isset($_POST['submit'])) {
     }
     if ($filter == "bedroom") {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
-        $bedroomAmount = mysqli_real_escape_string($conn, $_POST['bedroomAmount']);
+        $bedroomAmount = filter_input(INPUT_POST, 'bedroomAmount');
         $sql = "SELECT *
                 FROM house  
                 LEFT JOIN house2 ON house.zipCode = house2.zipCode
                 WHERE 
-                house.bedroom = '%$bedroomAmount%'
-                -- house.City LIKE '%$search%' OR 
+                house.bedroom = $bedroomAmount and
+                (
+                house.City LIKE '%$search%' OR 
                 -- house.Sqft LIKE '%$search%' OR
                 -- house.Address LIKE '%$search%' OR 
-                -- house2.zipCode LIKE '%$search%'
-                ORDER BY house.bedroom
-                ";
+                house2.zipCode LIKE '%$search%'   
+                
+                )";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
 
@@ -489,8 +490,8 @@ if (isset($_POST['submit'])) {
         
         // If the query result is not empty, list all items
         // Start of full container
-        echo "<section class='house__show hero__house__2' id='house-show'>";
-        echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
+        echo "<section class='house__show hero__house__2' id='house-show' style='background-color:#ADCFEA;'>";
+        // echo " <img src='image/blue1.jpg' alt='' class='search__img' style='height: 100vh;'>";
 
 
         
