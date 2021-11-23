@@ -66,7 +66,7 @@
                 <input type="text" name="search" class="search__result__text" placeholder="Enter a city, address, or zipcode...">
                 <input type="submit" class="button search__button" name="submit">
             </div>
-            <div class="user__container input__design" style="z-index:100; align-self: center; width: 40%;">
+            <div class="user__container input__design" style="z-index:100; align-self: center; width: 50%;">
                 <div class="input__extra__container" >
                     <p style="text-decoration: underline; padding-right: 1rem;">Filters:</p>
                     <div class="radio__container" style="margin: 0.2rem;">
@@ -82,9 +82,14 @@
                         <input type="radio" name="filter" id="internet" value="internet">
                     </div> 
                     <div class="radio__container" style="margin: 0.2rem;">
-                        <label for="bathroom">Bathroom</label>
-                        <input type="radio" name="filter" id="bathroom" value="bathroom">
-                        <input type="text" name="bathroomAmount" id="bathroom">
+                        <div>
+                            <label for="bathroom">Bathroom</label>
+                            <input type="radio" name="filter" id="bathroom" value="bathroom">
+                        </div>
+                        <div>
+                            <!-- <label for="bathroom">How many:</label> -->
+                            <input type="text" name="bathroomAmount" id="bathroom">
+                        </div>     
                     </div> 
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="bedroom">Bedroom</label>
