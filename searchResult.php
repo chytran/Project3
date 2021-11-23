@@ -84,7 +84,7 @@
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="bathroom">Bathroom</label>
                         <input type="radio" name="filter" id="bathroom" value="bathroom">
-                        <!-- <input type="text" name="bathroom" id="bathroom"> -->
+                        <input type="text" name="bathroomAmount" id="bathroom">
                     </div> 
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="bedroom">Bedroom</label>
@@ -159,7 +159,7 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
-            echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
+            echo " <img src='image/blue1.jpg' alt='' class='search__img' style='height: 1000vh;'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
@@ -242,8 +242,8 @@ if (isset($_POST['submit'])) {
         
         // If the query result is not empty, list all items
         // Start of full container
-        echo "<section class='house__show hero__house__2' id='house-show'>";
-        echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
+        echo "<section class='house__show hero__house__2' id='house-show' >";
+        echo " <img src='image/blue1.jpg' alt='' class='search__img' style='height: 1000vh;'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
@@ -256,6 +256,7 @@ if (isset($_POST['submit'])) {
                         echo "<p class='house__bedroom' style='padding-left: 0.5rem;'>" . $row['Bedroom'] . ' bedroom' . "</p>";
                         echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . $row['Bathroom'] . ' bathroom' . "</p>";               
                         echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate at zip code " . "(" . $row['zipCode'] . ")" . ": " . $row['crime'] . "</p>"; 
+                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "Median Income in the area: " . "$" . $row['medianIncome'] . "</p>"; 
                     echo "</div>";
                 }
                 echo "</section>";
@@ -266,7 +267,7 @@ if (isset($_POST['submit'])) {
 
             // Right Side
             if ($resultCheck1 > 0) {
-                echo "<section class='house__show__2'>";
+                echo "<section class='house__show__2' > ";
                 while ($row1 = mysqli_fetch_assoc($result1)) {
                     echo "<div class='house__info' style='margin-left: 0.5rem; width: 95%; margin-top: 0.5rem; border: 0.5px solid #121212; background-color: #FEFEFA; color: #121212; padding: 0.5rem;'>";
                         echo "<p class='house__zipCode' style='padding-left: 1rem; font-weight: 700; font-size: 1.5rem;'>" . 'Zip Code: ' . $row1['zipCode'] . "</p>";
@@ -324,7 +325,7 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
-        echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
+        echo " <img src='image/blue1.jpg' alt='' class='search__img' style='height: 1000vh;'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
@@ -336,7 +337,8 @@ if (isset($_POST['submit'])) {
                         echo "<p class='house__zipCode' style='padding-left: 0.5rem;'>" . 'Zip Code: ' . $row['zipCode'] . "</p>";
                         echo "<p class='house__bedroom' style='padding-left: 0.5rem;'>" . $row['Bedroom'] . ' bedroom' . "</p>";
                         echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . $row['Bathroom'] . ' bathroom' . "</p>";               
-                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate at zip code" . "(" . $row['zipCode'] . ")" . ": " . $row['crime'] . "</p>"; 
+                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "crime rate at zip code" . "(" . $row['zipCode'] . ")" . ": " . $row['crime'] . "</p>";
+                        echo "<p class='house__bathroom' style='padding-left: 0.5rem;'>" . "Internet Usage in the area" . ": " . $row['internetAccess'] . "</p>";  
                     echo "</div>";
                 }
                 echo "</section>";
@@ -372,18 +374,20 @@ if (isset($_POST['submit'])) {
     }
     if ($filter == "bathroom") {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
-        // $bathroomSearch = mysqli_real_escape_string($conn, $_POST['bathroom']); 
+        $bathroomAmount = filter_input(INPUT_POST, 'bathroomAmount'); 
 
         $sql = "SELECT *
                 FROM house  
                 LEFT JOIN house2 ON house.zipCode = house2.zipCode
                 WHERE 
+                house.bathroom = $bathroomAmount and
+                (
                 house.City LIKE '%$search%' OR 
-                house.Sqft LIKE '%$search%' OR
-                house.Address LIKE '%$search%' OR 
-                house2.zipCode LIKE '%$search%'
-                ORDER BY house.bathroom
-                ";
+                -- house.Sqft LIKE '%$search%' OR
+                -- house.Address LIKE '%$search%' OR 
+                house2.zipCode LIKE '%$search%'   
+                
+                )";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
 
@@ -407,7 +411,7 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show'>";
-        echo " <img src='image/blue1.jpg' alt='' class='search__img'>";
+        echo " <img src='image/blue1.jpg' alt='' class='search__img' style='height: 1000vh;'>";
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
@@ -491,7 +495,7 @@ if (isset($_POST['submit'])) {
         // If the query result is not empty, list all items
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show' style='background-color:#ADCFEA;'>";
-        // echo " <img src='image/blue1.jpg' alt='' class='search__img' style='height: 100vh;'>";
+        echo " <img src='image/blue1.jpg' alt='' class='search__img' style='height: 1000vh;'>";
 
 
         
