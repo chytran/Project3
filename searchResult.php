@@ -89,6 +89,7 @@
                     <div class="radio__container" style="margin: 0.2rem;">
                         <label for="bedroom">Bedroom</label>
                         <input type="radio" name="filter" id="bedroom" value="bedroom">
+                        <input type="text" name="bedroomAmount">
                     </div> 
                 </div>
             </div>
@@ -454,15 +455,16 @@ if (isset($_POST['submit'])) {
     }
     if ($filter == "bedroom") {
         $search = mysqli_real_escape_string($conn, $_POST['search']); 
-        
+        $bedroomAmount = mysqli_real_escape_string($conn, $_POST['bedroomAmount']);
         $sql = "SELECT *
                 FROM house  
                 LEFT JOIN house2 ON house.zipCode = house2.zipCode
                 WHERE 
-                house.City LIKE '%$search%' OR 
-                house.Sqft LIKE '%$search%' OR
-                house.Address LIKE '%$search%' OR 
-                house2.zipCode LIKE '%$search%'
+                house.bedroom = '%$bedroomAmount%'
+                -- house.City LIKE '%$search%' OR 
+                -- house.Sqft LIKE '%$search%' OR
+                -- house.Address LIKE '%$search%' OR 
+                -- house2.zipCode LIKE '%$search%'
                 ORDER BY house.bedroom
                 ";
         $result = mysqli_query($conn, $sql);
