@@ -99,8 +99,6 @@
                 </div>
             </div>
         </form>
-        
-        
 
         <?php if(isset($_SESSION["userid"]) || isset($_SESSION["useremail"])) { ?>
             <div class="zipCode__expand" style="margin-top: 1rem; ">
