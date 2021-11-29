@@ -92,9 +92,14 @@
                         </div>     
                     </div> 
                     <div class="radio__container" style="margin: 0.2rem;">
-                        <label for="bedroom">Bedroom</label>
-                        <input type="radio" name="filter" id="bedroom" value="bedroom">
-                        <input type="text" name="bedroomAmount">
+                    <div>
+                            <label for="bee=droom">Bedroom</label>
+                            <input type="radio" name="filter" id="bedroom" value="bedroom">
+                        </div>
+                        <div>
+                            <!-- <label for="bathroom">How many:</label> -->
+                            <input type="text" name="bedroomAmount" id="bedroom">
+                        </div>  
                     </div> 
                 </div>
             </div>
@@ -388,7 +393,7 @@ if (isset($_POST['submit'])) {
                 house.City LIKE '%$search%' OR 
                 -- house.Sqft LIKE '%$search%' OR
                 -- house.Address LIKE '%$search%' OR 
-                house2.zipCode LIKE '%$search%'   
+                house.zipCode LIKE '%$search%'   
                 
                 )";
         $result = mysqli_query($conn, $sql);
@@ -472,7 +477,7 @@ if (isset($_POST['submit'])) {
                 house.City LIKE '%$search%' OR 
                 -- house.Sqft LIKE '%$search%' OR
                 -- house.Address LIKE '%$search%' OR 
-                house2.zipCode LIKE '%$search%'   
+                house.zipCode LIKE '%$search%'   
                 
                 )";
         $result = mysqli_query($conn, $sql);
@@ -499,9 +504,6 @@ if (isset($_POST['submit'])) {
         // Start of full container
         echo "<section class='house__show hero__house__2' id='house-show' style='background-color:#ADCFEA;'>";
         echo " <img src='image/blue1.jpg' alt='' class='search__img' style='height: 1000vh;'>";
-
-
-        
             // Left Side
             if ($resultCheck > 0) {
                 echo "<section class='house__show__2'>";
