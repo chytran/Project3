@@ -1,0 +1,6 @@
+Language used:
+-PHP
+-HTML
+-CSS/SCSS/SASS
+-Javascript
+-Python
