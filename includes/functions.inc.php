@@ -61,8 +61,6 @@ function uidExists($conn, $username, $email) {
         exit();
     }
 
-
-
     
     mysqli_stmt_bind_param($stmt, "ss", $username, $email);
     mysqli_stmt_execute($stmt);
